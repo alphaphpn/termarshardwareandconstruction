@@ -1,0 +1,262 @@
+/* Always set the map height explicitly to define the size of the div
+	* element that contains the map. */
+#map {
+	height: 100%;
+}
+
+* {box-sizing: border-box;}
+
+body { 
+	margin: 0;
+}
+
+.vh-100 {
+	height: 100vh;
+}
+
+.mxw-half {
+	max-width: 50%;
+}
+
+#navbar {
+	padding: .8rem 1rem;
+	transition: 0.4s;
+}
+
+#show_hide_password .fa-eye-slash, 
+#show_hide_password1 .fa-eye-slash, 
+#show_hide_password2 .fa-eye-slash,
+.default-address span {
+	cursor: pointer;
+}
+
+#navbar #mlogo {
+	max-height: 58px;
+	transition: 0.4s;
+}
+
+#navbar a {
+	text-shadow: 0 0 6px #000, 0 0 2px #000;
+}
+
+#mlogo {
+	max-height: 48px;
+}
+
+/** Default Style - Start **/
+.w-30px {
+	width: 30px;
+}
+
+.w360center {
+	width: 100%;
+	max-width: 468px;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+}
+
+.acct-img {
+	width: 100%;
+	max-width: 20px;
+	height: auto;
+	border-radius: 50%;
+	margin-right: 6px;
+}
+
+.indiunem {
+	font-size: 12px;
+	margin-right: 12px;
+}
+
+.fit-product-qty {
+	max-width: 102px;
+}
+
+#ghunit {
+	width: 100%;
+}
+
+.page-innerx button#adtestmsg {
+	display: block!important;
+}
+
+span#nmbtemi {
+	background-color: red;
+	padding: 0 6px;
+	border-radius: 50%;
+	color: #fff;
+}
+
+footer.footer p {
+	font-size: 12px;
+}
+
+#myAuth footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #323232;
+	color: white;
+}
+
+.table-hover tbody tr:hover {
+	cursor: pointer;
+}
+
+.tbl-action {
+	padding: 0!important;
+	padding-top: 5px!important;
+	padding-right: 5px!important;
+}
+
+.qty_edit {
+	max-width: 60px;
+	text-align: end;
+}
+
+#myAuth .g-signin2 {
+	top: 9px;
+	left: 18px;
+}
+
+#imgogsrc2 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#topnotchaer {
+	position: fixed;
+	bottom: 12px;
+	right: 32px;
+}
+
+.img-thumbnail {
+	cursor: pointer;
+}
+
+#dash-itemprod .img-thumbnail {
+	max-height: 182px;
+	margin: 0 auto;
+}
+
+#user-add .img-thumbnail {
+	width: 100%;
+	height: auto;
+	max-height: 320px;
+}
+
+#itemfilenem {
+	padding: 0.2rem 0.75rem;
+}
+
+#itmvwimgfl2, .preview-img-modal {
+	height: 82vh;
+}
+
+.modal-img-preview-fit {
+	width: 100%;
+	max-width: max-content;
+}
+
+#itmvwimgfl3 {
+	height: 82vh;
+	width: 42vw;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#ymModalItemPreviewFront .modal-body div.position-absolute {
+	top: 26px;
+	right: 26px;
+}
+
+#ymModalItemPreview .modal-dialog, 
+#ymModalItemPreviewFront .modal-dialog {
+	max-width: max-content;
+}
+
+.button-minus, .button-plus, .addminusentry {
+	height: min-content;
+	border: 1px solid #fff;
+}
+
+.button-plus {
+	border-radius: 0 8px 8px 0;
+}
+
+.button-minus {
+	border-radius: 8px 0 0 8px;
+}
+
+.addminusentry {
+	width: 100%;
+	max-width: 56px;
+}
+
+.map-footer {
+	border: 0;
+	margin-bottom: -6px;
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	} 
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	} 
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+}
+
+.slick-initialized button:focus {
+	outline: unset;
+}
+
+/** Default Style - End **/
+
+@media only screen and (max-width: 575px) {
+	.mxw-half {
+		max-width: unset;
+	}
+
+	#ymModalItemPreviewFront .modal-dialog {
+		max-width: unset;
+	}
+
+	#itmvwimgfl3 {
+		width: 84vw;
+	}
+}
+
+@media only screen and (max-width: 1023px) {
+	#myDashB main.page-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: 690px) {
+	.page-wrapper {
+		height: 100%!important;
+	}
+}
