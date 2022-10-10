@@ -72,6 +72,7 @@
 
 						$_SESSION["gogfirstime"] = $row['gogfirstime'];
 						
+						echo "<script>alert('Successfully Logged In!');</script>";
 						echo "<script>window.open('../../', '_self');</script>";
 					}
 

@@ -31,13 +31,19 @@
 	<link rel="stylesheet" href="<?php echo $dirbak; ?>assets/boots/css/bootstrap-colorpicker/main.css">
 	<link rel="stylesheet" href="<?php echo $dirbak; ?>assets/npm/slick-carousel@1.8.1/slick/slick.css">
 	<link rel="stylesheet" href="<?php echo $dirbak; ?>assets/css/dashboard.css">
+	<link rel="stylesheet" href="<?php echo $dirbak; ?>assets/css/dashboard-style.css">
 	<link rel="stylesheet" href="<?php echo $dirbak; ?>assets/css/style.css">
 	<style>
 		.dboardbg {
-			background-image: url("../../storage/img/dashboard-bg.png");
+			background-image: url("../../storage/img/termars-db-bg.jpg");
 			background-repeat: no-repeat;
 			background-size: cover;
-			background-color: transparent; /* rgb(255 255 255 / 60%); */
+			background-position: right;
+			background-attachment: fixed;
+		}
+
+		.chiller-theme .sidebar-wrapper .sidebar-menu ul li a i, .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div, .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu, .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
+			background: <?php echo $tenthcolor ?>;
 		}
 	</style>
 	<script src="<?php echo $dirbak; ?>assets/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

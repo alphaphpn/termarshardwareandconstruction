@@ -12,12 +12,14 @@
 	<script>
 		function scrollFunction() {
 			if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+				document.getElementById("mlogo").src = "<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$navbarlogo; ?>";
 				document.getElementById("navbar").style.padding = ".5rem 1rem";
 				document.getElementById("mlogo").style.maxHeight = "48px";
 				document.getElementById("secnavbr").style.backgroundColor = "<?php echo $primarycolor; ?>";
 				document.getElementById("secnavbr").style.backgroundImage = "<?php echo $menugradientcolor; ?>";
 				document.getElementById("navbar").getElementsByClassName("dropdown-menu")[0].style.backgroundColor = "<?php echo $primarycolor; ?>";
 			} else {
+				document.getElementById("mlogo").src = "<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$syslogo; ?>";
 				document.getElementById("navbar").style.padding = ".8rem 1rem";
 				document.getElementById("mlogo").style.maxHeight = "58px";
 				document.getElementById("secnavbr").style.backgroundColor = "<?php echo $forthcolor; ?>";
@@ -30,4 +32,4 @@
 	<script><?php echo $customscript; ?></script>
 </body>
 </html>
-<!-- Lludvick Novechskie PHP CMS Framework -->
+<!-- Anonymous PHP CMS Framework -->

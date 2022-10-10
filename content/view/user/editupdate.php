@@ -1,5 +1,6 @@
 <?php
 	include_once "../../../content/template-part/".$themename."/dashboard-navbar.php";
+	include_once "../../../content/template-part/{$themename}/dashboard-navbar-top.php";
 	include_once "../../../inc/core.php";
 	include_once "../../../inc/srvr.php";
 	include_once "../../../inc/cnndb.php";

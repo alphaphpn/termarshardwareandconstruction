@@ -9,7 +9,7 @@
 				<p><a class="text-body" href="mailto:<?php echo $memail ?>"><span class="fas fa-envelope-square"></span> <?php echo $memail ?></a></p>
 				<p><a class="text-body" href="//<?php echo $facebook ?>" target="_blank"><span class="fab fa-facebook-square"></span> <?php echo $facebook ?></a></p>
 			</div>
-			<div class="col-sm-7 slideanim">
+			<div class="col-sm-7">
 				<form method="post" class="needs-validation" novalidate>
 					<div class="row">
 						<div class="col-sm-6 form-group">

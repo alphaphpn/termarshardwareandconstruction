@@ -1,5 +1,6 @@
 <?php
 	include_once "../../content/template-part/".$themename."/dashboard-navbar.php";
+	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
 ?>
 
 <link rel="stylesheet" href="<?php echo $dirbak; ?>assets/datatables/1.11.3/css/jquery.dataTables.min.css">

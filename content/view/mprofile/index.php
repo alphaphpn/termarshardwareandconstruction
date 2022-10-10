@@ -41,6 +41,13 @@
 	} else {
 		$profpicsurrer = "../../".$pimglnkurl;
 	}
+
+	$mobilemt = isset($_GET['mobile']);
+	$addressemt = isset($_GET['address']);
+
+	if ($mobilemt==1 || $addressemt==1) {
+		echo '<script>alert("Complete your Profile to make an order.");</script>';
+	}
 ?>
 
 <script>
@@ -82,7 +89,7 @@
 						</div>
 						<div class="col-md-9 mt-auto">
 							<div class="form-group">
-								<label for="profpic">Profile Picture: <?php echo $profpicsurrer; ?></label>
+								<label for="profpic" class="d-none">Profile Picture: <?php echo $profpicsurrer; ?></label>
 								<div class="input-group mb-3">
 									<input type="file" id="profpic" name="profpic" class="form-control" placeholder="Upload File" accept="image/*">
 									<div class="valid-feedback">Valid.</div>

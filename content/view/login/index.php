@@ -26,7 +26,6 @@
 					$('#glogin').addClass('border border-warning rounded-lg m-auto');
 					$('#glogin').removeClass('position-absolute');
 					$('.card-footer .col-sm-6.mb-2.text-right').addClass('d-flex');
-
 				}
 			}//::END if
 		}//::END for

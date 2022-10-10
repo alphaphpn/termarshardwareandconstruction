@@ -1,5 +1,6 @@
 <?php
 	include_once "../../../content/template-part/".$themename."/dashboard-navbar.php";
+	include_once "../../../content/template-part/{$themename}/dashboard-navbar-top.php";
 	$mdate = date("Y-m", strtotime(isset($_GET['mdate']) ? $_GET['mdate'] : date("Y-m")));
 ?>
 

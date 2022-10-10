@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2022 at 04:08 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Oct 09, 2022 at 08:36 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,7 +74,7 @@ CREATE TABLE `conf` (
 --
 
 INSERT INTO `conf` (`id`, `cmpny_name`, `sys_name`, `sys_ver`, `sys_logo`, `navbar_logo`, `favicon`, `quote_title`, `ceo_pres`, `memail`, `facebook`, `telno`, `mobileno`, `maddress`, `idletime`, `themename`, `domainhome`, `fontglobal`, `datetoday`, `created`, `primary_color`, `second_color`, `third_color`, `forth_color`, `fifth_color`, `sixth_color`, `seventh_color`, `eight_color`, `ninght_color`, `tenth_color`, `menu_gradient_color`, `geo_map`, `build_by`, `cwebzite`, `dcurrencyx`, `nav_bar_orrient`, `modified`, `button_size`, `content_width`) VALUES
-(1, 'Termar\'s Hardware and Constraction', 'Termar\'s Hardware and Constraction', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Online hardware can help them improve the concerns of the customers.', 'Engr. Allan Poserio', 'termars_rubina@yahoo.com', 'facebook.com/termarshardware', '(062) 957-2826', '0917-115-5270', 'Purok Citrus, Poblacion Ipil, Zamboanga Sibugay, PH 07001', 20, 'termarshardwareandconstruction', '/alphaphpn.com/staging/termarshardwareandconstruction/', '', '20220403', '2021-11-03 21:09:34', '#f79646', 'rgba(247,150,70,0.1)', '#b56422', 'rgba(247,150,70,0.75)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'linear-gradient(rgb(238, 103, 45), rgb(248, 174, 51), rgb(238, 103, 45))', '7.7829683,122.5886357', 'Divina Tadeo Ochovillo, Beverly Pestaño Apatan, Rovilyn Fernandez Maico, Crisjen Remegio Dequin', 'termarshardwareandconstruction.com', '&#8369;', 'fixed-top', '2022-04-06 01:14:20', '', 'container');
+(1, 'Termar\'s Hardware and Constraction', 'Termar\'s Hardware and Constraction', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Online hardware can help them improve the concerns of the customers.', 'Engr. Allan Poserio', 'termars_rubina@yahoo.com', 'facebook.com/termarshardware', '(062) 957-2826', '0917-115-5270', 'Purok Citrus, Poblacion Ipil, Zamboanga Sibugay, PH 07001', 20, 'termarshardwareandconstruction', '/termarshardwareandconstruction/', '', '20220403', '2021-11-03 21:09:34', '#f79646', 'rgba(247,150,70,0.1)', '#b56422', 'rgba(247,150,70,0.95)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'linear-gradient(rgb(238, 103, 45), rgb(248, 174, 51), rgb(238, 103, 45))', '7.7829683,122.5886357', 'Divina Tadeo Ochovillo, Beverly Pestaño Apatan, Rovilyn Fernandez Maico, Crisjen Remegio Dequin', 'termarshardwareandconstruction.com', '&#8369;', 'fixed-top', '2022-10-09 00:27:01', '', 'container');
 
 -- --------------------------------------------------------
 
@@ -118,6 +118,38 @@ CREATE TABLE `tblitem` (
   `deletedx` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tblitem`
+--
+
+INSERT INTO `tblitem` (`item_id`, `barcode`, `name`, `description`, `category`, `unit`, `sell_price`, `sale_price`, `supplier_price`, `stock_available`, `size`, `color`, `quality`, `status`, `extnem`, `created`, `modified`, `deletedx`) VALUES
+(1, '', 'Dress', '', 'Womens Apparel', 'pc', 280, 0, 0, 90, 'Medium', '', '', 0, 'jpg', '2022-04-05 09:48:38', '2022-04-25 14:30:39', 1),
+(2, '', 'Huda Liquid Matte', '', 'Beauty Product', 'pc', 180, 0, 0, 20, 'Small', '', '', 0, 'jpg', '2022-04-05 10:35:00', '2022-04-25 14:30:43', 1),
+(3, '', 'ASJ03-26 Die Grinder', '', 'Die Grinder', 'pc', 4800, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:39:58', '2022-04-25 14:44:36', 1),
+(4, '', 'ASM10-100 Angle Grinder', '', 'Angle Grinder', 'pc', 6000, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 07:42:01', '2022-04-25 14:44:32', 1),
+(5, '', 'ASM10-100H Angle Grinder', '', 'DCA Power Tools', 'pc', 6200, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:43:57', '2022-04-25 14:43:57', 0),
+(6, '', 'ASM05-100B Angle Grinder', '', 'DCA Power Tools', 'pc', 4000, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:47:58', '2022-04-25 14:47:58', 0),
+(7, '', 'ASE150 Bench Grinder', '', 'DCA Power Tools', 'pc', 4500, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:49:57', '2022-04-25 14:49:57', 0),
+(8, '', 'TBG15015.5 Bench Grinder', '', 'DCA Power Tools', 'pc', 2376, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:51:16', '2022-04-25 14:51:16', 0),
+(9, '', 'ASE200 Bench Grinder', '', 'DCA Power Tools', 'pc', 6600, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:53:11', '2022-04-25 14:53:11', 0),
+(10, '', 'ASJ03-10 Die Grinder', '', 'DCA Power Tools', 'pc', 3100, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:54:21', '2022-04-25 14:54:21', 0),
+(11, '', 'ASJ04-25 Die Grinder', '', 'DCA Power Tools', 'pc', 4200, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:56:41', '2022-04-25 14:56:41', 0),
+(12, '', 'AJZ06-10 Angle Drill', '', 'DCA Power Tools', 'pc', 8200, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 07:57:49', '2022-04-25 14:57:49', 0),
+(13, '', 'AJZ05-10A Electric Drill', '', 'DCA Power Tools', 'pc', 3500, 0, 0, 50, 'Medium', '', '', 0, '', '2022-04-25 07:59:08', '2022-04-25 14:59:08', 0),
+(14, '', 'Rain or Shine Ros-100 4L Goldseries White', '', 'Paints & Accessories', 'Pale', 620, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 08:05:48', '2022-04-25 15:05:48', 0),
+(15, '', 'Rain or Shine Ros-Rm-12777 4L Azure Blue', '', 'DCA Power Tools', 'pale', 1082, 0, 0, 50, '4L', '', '', 0, 'png', '2022-04-25 08:07:33', '2022-04-25 15:07:33', 0),
+(16, '', 'Rain or Shine Ros-Dk-112 4L Gray', '', 'Paints & Accessories', 'Pale', 1090, 0, 0, 50, '4L', '', '', 0, 'png', '2022-04-25 08:08:51', '2022-04-25 15:08:51', 0),
+(17, '', 'Mr. Long Arm Smart Painter System', '', 'Paints & Accessories', 'pc', 1019, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:10:21', '2022-04-25 15:10:21', 0),
+(18, '', 'Mr. Long Arm Pro-Pole Extension', '', 'Paints & Accessories', 'pc', 999, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:11:30', '2022-04-25 15:11:30', 0),
+(19, '', 'Truper 17558 PICA-X Skeleton Reforced, Fiberglass Caulk Gun', '', 'Paints & Accessories', 'pc', 549, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 08:12:43', '2022-04-25 15:12:43', 0),
+(20, '', 'Total TTAC2506 12V AUTO AIR COMPRESSOR with Light', '', 'Hand Tools', 'pc', 2080, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 08:14:23', '2022-04-25 15:14:23', 0),
+(21, '', 'Michelin MBL6 1.5HP Oil Free Air Compressor', '', 'Hand Tools', 'pc', 11000, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 08:15:34', '2022-04-25 15:15:34', 0),
+(22, '', 'Vespa 2 HP Direct Couple Air Compressor', '', 'Hand Tools', 'pc', 4800, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 08:16:55', '2022-04-25 15:16:55', 0),
+(23, '', 'MAKITA B-65791 Aviation Snips Cuts Straight', '', 'Hand Tools', 'pc', 1090, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:17:54', '2022-04-25 15:17:54', 0),
+(24, '', 'STANLEY “Contractor Grade” High Tension Hacksaw Frame', '', 'Hand Tools', 'pc', 700, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:18:51', '2022-04-25 15:18:51', 0),
+(25, '', 'STANLEY 74-995 HD Hedge Shears 8”', '', 'Hand Tools', 'pc', 700, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:20:01', '2022-04-25 15:20:01', 0),
+(26, '', 'IELST Reviewer', '', 'Book', 'pc', 489, 0, 0, 185, '156 pages', '', '', 0, 'png', '2022-10-09 18:12:13', '2022-10-09 11:12:13', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -160,7 +192,8 @@ CREATE TABLE `tblsysuser` (
 
 INSERT INTO `tblsysuser` (`usercode`, `username`, `passcode`, `pin`, `extname`, `img_url`, `fullname`, `uemail`, `umobileno`, `xposition`, `secquest`, `secans`, `ulevpos`, `uonline`, `ustatz`, `createdby`, `lname`, `fname`, `mname`, `address`, `deletedx`, `testimony`, `cmpny`, `cmpny_position`, `gogfirstime`, `created`, `modified`) VALUES
 ('00000000000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '123456', '', 'https://lh3.googleusercontent.com/a/AATXAJySoJIRP_pIVIlqG7sRV53ZP97u1QcDOl1gIz_a=s96-c', 'Admin A. Minad', 'admin@info.com', '1', 'Administrator', 'What is your the name of your favorite dog?', 'you', 1, 0, 1, '00000000000', 'Admin', 'Admin', 'Admin', '', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'The Company', 'Position', 0, '2021-12-06 00:12:35', '2022-04-05 21:57:41'),
-('117000830823875168641', 'devusayrshire', '5f4dcc3b5aa765d61d8327deb882cf99', '267593', 'jpg', 'content/theme/default/storage/img/profile/USER117000830823875168641.jpg', 'Usayr Shire', 'devusayrshire@gmail.com', '09154826025', 'Customer', 'What is the name of your favorite pet?', 'dog', 6, 0, 1, '', 'Shire', 'Usayr', '', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 0, '', '', '', 0, '2022-04-02 16:15:02', '2022-04-02 23:37:41'),
+('114792514623933940437', 'napigkitludwigbethnicer', 'ab7591a976a59f0f6777507348487110', '160375', '', 'content/theme/termarshardwareandconstruction/storage/img/profile/USER114792514623933940437.', 'Ludwig Bethnicer Napigkit', 'napigkitludwigbethnicer@gmail.com', '+639154826025', 'Customer', 'What is the name of your favorite pet?', 'dog', 6, 0, 1, '', 'Napigkit', 'Ludwig Bethnicer', 'Cagas', 'Napigkit Cmpd., Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 0, '', '', '', 1, '2022-10-09 17:33:45', '2022-10-09 10:39:34'),
+('117000830823875168641', 'devusayrshire', '1b610968964ff57d0a55ac6479db9c7e', '267593', 'png', 'content/theme/termarshardwareandconstruction/storage/img/profile/USER117000830823875168641.png', 'Usayr Shire', 'devusayrshire@gmail.com', '09154826025', 'Customer', 'What is the name of your favorite pet?', 'dog', 6, 0, 1, '', 'Shire', 'Usayr', '', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 0, '', '', '', 0, '2022-04-02 16:15:02', '2022-10-09 10:30:56'),
 ('202204030001', 'cashier', '6ac2470ed8ccf204fd5ff89b32a355cf', '095324', '', '', 'Cashier C. Cashier', 'cashier@gmail.com', '12345678910', 'Cashier', 'What is the name of your favorite pet?', 'dog', 3, 0, 1, '', 'Cashier', 'Cashier', 'Cashier', 'Pob., Tungawan', 0, '', '', '', 0, '2022-04-04 00:00:51', '2022-04-03 16:04:13');
 
 -- --------------------------------------------------------
@@ -578,7 +611,7 @@ CREATE TABLE `tbl_menu_frontpage` (
 INSERT INTO `tbl_menu_frontpage` (`menu_id`, `menu_title`, `menu_slug`, `menu_open`, `menable`) VALUES
 (1, 'Home', 'home', '_self', 1),
 (2, 'Services', 'services', '_self', 0),
-(3, 'Products', 'productsitems', '_self', 1),
+(3, 'Products', 'products', '_self', 1),
 (4, 'Portfolio', 'portfolio', '_self', 0),
 (5, 'Testimonials', 'testimonials', '_self', 1),
 (6, 'Contact Us', 'contactus', '_self', 1),
@@ -620,6 +653,15 @@ CREATE TABLE `tbl_order_customer` (
   `deleted` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_order_customer`
+--
+
+INSERT INTO `tbl_order_customer` (`order_id`, `receipt_no`, `customer_id`, `customer_name`, `phone`, `cemail`, `address`, `sub_total_qty`, `sub_total_item`, `sub_total`, `shipping_fee`, `total_all`, `remarks`, `status`, `process_by`, `review_by`, `approved_by`, `receiver`, `receiver_phone`, `remail`, `d_location`, `long_lat`, `courier`, `otherinfo`, `created`, `modified`, `deleted`) VALUES
+(1, NULL, '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 700, NULL, NULL, 'Checkout', 'Unpaid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-10-08 20:08:25', '2022-10-08 13:33:33', 0),
+(2, NULL, '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 11, 4, 22, NULL, NULL, 'Checkout', 'Unpaid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-10-09 13:31:15', '2022-10-09 09:50:20', 0),
+(3, NULL, '117000830823875168641', 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 700, NULL, NULL, 'Process', 'Unpaid', NULL, NULL, NULL, 'Usayr Shire', '09154826025', 'devusayrshire@gmail.com', 'African Daisy, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', '2022-10-09 18:09:47', '2022-10-09 12:26:29', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -643,6 +685,18 @@ CREATE TABLE `tbl_order_item` (
   `created` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_order_item`
+--
+
+INSERT INTO `tbl_order_item` (`item_order_id`, `order_id`, `item_id`, `barcode`, `item_name`, `qty`, `unit`, `price`, `total_amt`, `extnem`, `cstock`, `status`, `modified`, `created`, `deleted`) VALUES
+(1, 1, 25, '', 'STANLEY 74-995 HD Hedge Shears 8”', 1, 'pc', 700, 700, 'png', 50, NULL, '2022-10-08 20:08:25', '2022-10-08 20:08:25', 0),
+(2, 2, 24, '', 'STANLEY “Contractor Grade” High Tension Hacksaw Frame', 1, 'pc', 700, 700, 'png', 50, NULL, '2022-10-09 13:31:15', '2022-10-09 13:31:15', 0),
+(3, 2, 22, '', 'Vespa 2 HP Direct Couple Air Compressor', 1, 'pc', 4800, 4800, 'png', 50, NULL, '2022-10-09 16:26:31', '2022-10-09 16:26:31', 0),
+(4, 2, 21, '', 'Michelin MBL6 1.5HP Oil Free Air Compressor', 1, 'pc', 11000, 11000, 'png', 50, NULL, '2022-10-09 16:26:36', '2022-10-09 16:26:36', 0),
+(5, 2, 25, '', 'STANLEY 74-995 HD Hedge Shears 8”', 8, 'pc', 700, 5600, 'png', 50, NULL, '2022-10-09 16:27:08', '2022-10-09 16:26:45', 0),
+(6, 3, 24, '', 'STANLEY “Contractor Grade” High Tension Hacksaw Frame', 1, 'pc', 700, 700, 'png', 50, NULL, '2022-10-09 18:09:47', '2022-10-09 18:09:47', 0);
 
 -- --------------------------------------------------------
 
@@ -852,7 +906,7 @@ ALTER TABLE `tblcrud`
 -- AUTO_INCREMENT for table `tblitem`
 --
 ALTER TABLE `tblitem`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tblsysuser_address`
@@ -942,13 +996,13 @@ ALTER TABLE `tbl_menu_frontpage`
 -- AUTO_INCREMENT for table `tbl_order_customer`
 --
 ALTER TABLE `tbl_order_customer`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_item`
 --
 ALTER TABLE `tbl_order_item`
-  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_secquest`

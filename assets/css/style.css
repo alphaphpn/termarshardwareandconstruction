@@ -57,7 +57,7 @@ body {
 
 .acct-img {
 	width: 100%;
-	max-width: 20px;
+	max-width: 22px;
 	height: auto;
 	border-radius: 50%;
 	margin-right: 6px;
@@ -65,7 +65,6 @@ body {
 
 .indiunem {
 	font-size: 12px;
-	margin-right: 12px;
 }
 
 .fit-product-qty {

@@ -96,7 +96,7 @@
 									$item_id=$row['item_id'];
 									$barcode=$row['barcode'];
 									$extnem=$row['extnem'];
-									$img_item='../../storage/img/items/ITEM'.$item_id.'.'.$extnem;
+									$img_item='../../content/theme/'.$themename.'/storage/img/item/ITEM'.$item_id.'.'.$extnem;
 									$item_name=$row['item_name'];
 
 									$qty=$row['qty'];
@@ -116,7 +116,7 @@
 										<td><?php echo $xno; ?></td>
 										<td class="d-none" data-filter="<?php echo $item_id; ?>"><?php echo $item_id; ?></td>
 										<td class="d-none" data-filter="<?php echo $barcode; ?>"><?php echo $barcode; ?></td>
-										<td data-filter="<?php echo $img_item; ?>"><img class="w-30px" src="<?php echo $img_item; ?>"></td>
+										<td><img class="w-30px" src="<?php echo $img_item; ?>"></td>
 										<td data-filter="<?php echo $item_name; ?>"><?php echo $item_name; ?></td>
 										<td data-filter="<?php echo $qty; ?>">
 											<input type="number" id="qtyedit<?php echo $id2; ?>" name="qty_edit" class="qty_edit none-zero-input" value="<?php echo $qty; ?>" onchange="fnChangeQty(<?php echo $id2; ?>,this.value,<?php echo $item_id; ?>)" step="1" min="1" max="<?php echo $cstock; ?>"  onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">

@@ -117,13 +117,13 @@
 			if ($cntGetCUser > 0) {
 				foreach ($stmtGetCUser as $rowGetCUser) {
 					$clientname3 = $rowGetCUser["fullname"];
-					$clientphone3 = $rowGetCUser["umobileno"] ? $rowGetCUser["umobileno"] : header("location:../../../routes/mpurchase");
+					$clientphone3 = $rowGetCUser["umobileno"] ? $rowGetCUser["umobileno"] : header("location:../../../routes/mprofile/#pmobilephone?mobile=1");
 					$clientemail3 = $rowGetCUser["uemail"];
-					$clientaddress3 = $rowGetCUser["address"] ? $rowGetCUser["address"] : header("location:../../../routes/mpurchase");
+					$clientaddress3 = $rowGetCUser["address"] ? $rowGetCUser["address"] : header("location:../../../routes/mprofile/#zaddress?address=1");
 					$receivername3 = $rowGetCUser["fullname"];
-					$receiverphone3 = $rowGetCUser["umobileno"] ? $rowGetCUser["umobileno"] : header("location:../../../routes/mpurchase");
+					$receiverphone3 = $rowGetCUser["umobileno"] ? $rowGetCUser["umobileno"] : header("location:../../../routes/mprofile/#pmobilephone?mobile=1");
 					$receiveremail3 = $rowGetCUser["uemail"];
-					$receiveraddress3 = $rowGetCUser["address"] ? $rowGetCUser["address"] : header("location:../../../routes/mpurchase");
+					$receiveraddress3 = $rowGetCUser["address"] ? $rowGetCUser["address"] : header("location:../../../routes/mprofile/#zaddress?address=1");
 				}
 
 				$qry3 = "INSERT INTO tbl_order_customer SET 

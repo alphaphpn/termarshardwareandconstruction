@@ -260,7 +260,7 @@
 									$item_id=$row['item_id'];
 									$barcode=$row['barcode'];
 									$extnem=$row['extnem'];
-									$img_item='../../../storage/img/items/ITEM'.$item_id.'.'.$extnem;
+									$img_item='../../../content/theme/'.$themename.'/storage/img/item/ITEM'.$item_id.'.'.$extnem;
 									$item_name=$row['item_name'];
 
 									$qty=$row['qty'];

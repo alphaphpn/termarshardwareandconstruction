@@ -76,7 +76,7 @@
 										$itemidy = $row_purchase['item_id'];
 										$barcodey = $row_purchase['barcode'];
 										$extnemy = $row_purchase['extnem'];
-										$imgitemy='../../storage/img/items/ITEM'.$itemidy.'.'.$extnemy;
+										$imgitemy='../../content/theme/'.$themename.'/storage/img/item/ITEM'.$itemidy.'.'.$extnemy;
 										$itemnamey = $row_purchase['item_name'];
 										$qtyy = $row_purchase['qty'];
 										$unity = $row_purchase['unit'];

@@ -38,8 +38,9 @@
 
 	<div id="productitemz" class="<?php echo $contentwidth; ?>">
 		<h2>Products</h2>
+
 		<div class="pt-5 pb-5">
-			<div class="card-deck align-items-center slick-products slideanim">
+			<div class="card-deck align-items-center slick-products">
 			<?php
 				if ($num>0) {
 					foreach ($stmt as $row) {
@@ -122,6 +123,7 @@
 		var userCode = "<?php echo $deuzerked; ?>";
 		if (userCode==0) {
 			console.log('No User');
+			alert('Login first before you can order.');
 			window.open(dir+'routes/login', '_self');
 		} else {
 			console.log(userCode);
@@ -139,6 +141,7 @@
 		console.log(userCodeg);
 		if (userCodeg==0) {
 			console.log('No User');
+			alert('Login first before you can order.');
 			window.open(dirg+'routes/login', '_self');
 		} else {
 			console.log(userCodeg);

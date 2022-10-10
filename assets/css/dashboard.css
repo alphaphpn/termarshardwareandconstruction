@@ -99,7 +99,7 @@ font-size: 0.9rem;
 	border-radius: 0 4px 4px 0px;
 	width: 35px;
 	transition-delay: 0.3s;
-	z-index: 1;
+	z-index: 2;
 }
 .page-wrapper.toggled #show-sidebar {
 	left: -40px;
@@ -248,7 +248,7 @@ font-size: 0.9rem;
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
-	content: "\f105";
+	content: "\f104";
 	font-style: normal;
 	display: inline-block;
 	font-style: normal;
@@ -366,10 +366,6 @@ font-size: 0.9rem;
 	padding: 20px 25px;
 }
 
-.page-wrapper .page-content {
-	overflow-x: hidden;
-}
-
 .page-content {
 	height: 100vh;
 }
@@ -414,7 +410,7 @@ font-size: 0.9rem;
 /*-----------------------------chiller-theme-------------------------------------------------*/
 
 .chiller-theme .sidebar-wrapper {
-	background: #31353D;
+	background: #2c343b;
 }
 
 .chiller-theme .sidebar-wrapper .sidebar-header,
@@ -486,77 +482,4 @@ font-size: 0.9rem;
 
 .chiller-theme .sidebar-footer>a:last-child {
 	border-right: none;
-}
-
-/** Custom Style **/
-
-.bg-light-opacity {
-	background-color: #f8f9fa6b!important;
-}
-
-#listRecView .btn-sm, 
-#listRecView2 .btn-sm {
-	padding: .25rem!important;
-}
-
-#myDashB .alert {
-	padding-top: 6px;
-	padding-bottom: 0;
-}
-
-#myDashB .alert-dismissible .close {
-	padding: 4px;
-}
-
-#myDashB .footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: transparent;
-	color: inherit;
-	font-style: 
-}
-
-#myDashB .card .card-icon i {
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	border-radius: 50%;
-	font-size: 3rem;
-	color: #98a4c7;
-}
-
-#myDashB .w360center {
-	margin-bottom: unset;
-}
-
-.dataTables_wrapper input, 
-.dataTables_wrapper select {
-	background-color: #fff!important;
-}
-
-#listRecView tfoot tr td input, 
-#listRecView select {
-	width: 100%;
-}
-#listRecView tfoot tr td.remove-dropdown select, 
-#listRecView tfoot tr td.remove-dropdown input, 
-#listRecView thead tr th.remove-dropdown select, 
-#listRecView thead tr th.remove-dropdown input {
-	display: none;
-}
-
-.tbl-td-min-width {
-	min-width: 320px;
-}
-
-@media only screen and (max-width: 1440px) {
-	.table-responsive-sm {
-		display: block;
-		width: 100%;
-		overflow-x: auto;
-		webkit-overflow-scrolling: touch;
-	}
 }
