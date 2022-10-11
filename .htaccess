@@ -1,9 +1,9 @@
 RewriteEngine On
-ErrorDocument 404 /alphaphpn.com/staging/termarshardwareandconstruction/404.html
-ErrorDocument 500 /alphaphpn.com/staging/termarshardwareandconstruction/401.html
-ErrorDocument 403 /alphaphpn.com/staging/termarshardwareandconstruction/403.html
-ErrorDocument 400 /alphaphpn.com/staging/termarshardwareandconstruction/401.html
-ErrorDocument 401 /alphaphpn.com/staging/termarshardwareandconstruction/401.html
+ErrorDocument 404 /termarshardwareandconstruction/404.html
+ErrorDocument 403 /termarshardwareandconstruction/403.html
+ErrorDocument 400 /termarshardwareandconstruction/400.html
+ErrorDocument 401 /termarshardwareandconstruction/401.html
+ErrorDocument 500 /termarshardwareandconstruction/401.html
 
 Options -Indexes
 

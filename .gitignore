@@ -3,7 +3,7 @@ applib/
 staging/
 notes/
 storage/
-inc/srvr.php
+# inc/srvr.php
 
 content/theme/termarshardwareandconstruction/storage/img/item/
 content/theme/termarshardwareandconstruction/storage/img/profile/
@@ -15,6 +15,6 @@ notes.txt
 # 401.html
 # 403.html
 # 404.html
-.htaccess
+# .htaccess
 *.sql
 *.bak
