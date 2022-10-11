@@ -3,7 +3,7 @@ applib/
 staging/
 notes/
 storage/
-# inc/srvr.php
+inc/srvr.php
 
 content/theme/termarshardwareandconstruction/storage/img/item/
 content/theme/termarshardwareandconstruction/storage/img/profile/
