@@ -30,6 +30,13 @@
 	</script>
 	<script src="<?php echo $domainhome.'content/theme/'.$themename.'/assets/js/custom-script.js'; ?>"></script>
 	<script><?php echo $customscript; ?></script>
+	<?php
+		if (!isset($_SESSION["ulevpos"])) {
+			
+		} elseif ($_SESSION["ulevpos"]==1 || $_SESSION["ulevpos"]==3) {
+			echo '<script>window.open("'.$domainhome.'routes/dashboard","_self");</script>';
+		}
+	?>
 </body>
 </html>
 <!-- Anonymous PHP CMS Framework -->

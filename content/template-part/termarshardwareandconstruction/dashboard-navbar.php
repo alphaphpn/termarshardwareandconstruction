@@ -58,7 +58,19 @@
 <!-- sidebar-wrapper  -->
 <nav id="sidebar" class="sidebar-wrapper">
 	<div class="sidebar-brand">
-		<a href="<?php echo $baklnk; ?>">Visit Site</a>
+		<?php
+			if ($sidelogdbr=1) {
+				?>
+					<a href="<?php echo $baklnk; ?>" class="text-left">
+						<img src="<?php echo $baklnk.'content/theme/'.$themename.'/storage/img/'.$syslogo; ?>" class="dboard-top-left-logo">
+					</a>
+				<?php
+			} else {
+				?>
+					<a href="<?php echo $baklnk; ?>">Visit Site</a>
+				<?php
+			}
+		?>
 		<div id="close-sidebar">
 			<i class="fas fa-times"></i>
 		</div>

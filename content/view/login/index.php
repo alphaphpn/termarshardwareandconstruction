@@ -19,7 +19,7 @@
 				$_GET[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp.slice(1).join("").replace("+", " "));
 				console.log(`${$_GET['glogin']}`);
 				xtruegmail = $_GET[decodeURIComponent(tmp[0])];
-				if (xtruegmail=1) {
+				if (xtruegmail==1) {
 					$('#loginpost').addClass('d-none');
 					$('#ifregnorm').removeClass('d-none');
 					$("#glogin").detach().appendTo('#cardLogin');
@@ -40,7 +40,7 @@
 				<a id="therefresh" href="" class="position-absolute mr-3" style="right: 0;">Refresh</a>
 			</div>
 			<!-- //console.cloud.google.com/projectselector2/apis/dashboard -->
-			<div id="glogin" class="g-signin2 position-absolute m-auto" data-onsuccess="onSignIn" data-theme="dark" style="width: max-content;"></div>
+			<!-- div id="glogin" class="g-signin2 position-absolute m-auto" data-onsuccess="onSignIn" data-theme="dark" style="width: max-content;"></div -->
 			<div id="cardLogin" class="card-body">
 				<form id="loginpost" method="post" class="needs-validation" novalidate>
 					<div class="form-group">

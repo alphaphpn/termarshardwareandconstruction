@@ -121,7 +121,7 @@
 										</li>';
 
 										echo '<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img class="acct-img" src="'.$_SESSION["imglnkurl"].'"><span class="indiunem ">'.trim($_SESSION["firstname"]).'</a>
+											<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img class="acct-img" src="'.$domainhome.$_SESSION["imglnkurl"].'"><span class="indiunem ">'.trim($_SESSION["firstname"]).'</a>
 											<div class="dropdown-menu dropdown-menu-right">
 												<a class="dropdown-item" href="'.$domainhome.'routes/mprofile">Profile</a>';
 

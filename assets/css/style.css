@@ -24,8 +24,13 @@ body {
 }
 
 #show_hide_password .fa-eye-slash, 
+#show_hide_password .fa-eye, 
 #show_hide_password1 .fa-eye-slash, 
-#show_hide_password2 .fa-eye-slash,
+#show_hide_password1 .fa-eye, 
+#show_hide_password2 .fa-eye-slash, 
+#show_hide_password2 .fa-eye, 
+#hide_show_password .fa-eye-slash, 
+#hide_show_password .fa-eye, 
 .default-address span {
 	cursor: pointer;
 }
@@ -51,6 +56,13 @@ body {
 .w360center {
 	width: 100%;
 	max-width: 468px;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+}
+
+.w768center {
+	width: 100%;
+	max-width: 768px;
 	margin: 0 auto;
 	margin-bottom: 4rem;
 }
@@ -197,6 +209,10 @@ footer.footer p {
 .map-footer {
 	border: 0;
 	margin-bottom: -6px;
+}
+
+.form-control.form-check-input {
+	height: unset;
 }
 
 .slideanim {visibility:hidden;}

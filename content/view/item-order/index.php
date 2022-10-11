@@ -27,33 +27,33 @@
 				<thead id="remSortH">
 					<tr>
 						<th class="remove-dropdown"></th>
-						<th></th>
+						<th class="remove-dropdown"></th>
 						<th></th>
 						<th class="remove-dropdown d-none"></th>
 						<th></th>
 						<th class="remove-dropdown d-none"></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
-						<th></th>
 						<th class="remove-dropdown"></th>
-						<th></th>
 						<th class="remove-dropdown"></th>
-						<th></th>
-						<th></th>
-						<th></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
+						<th class="remove-dropdown"></th>
 					</tr>
 				</thead>
 

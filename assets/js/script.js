@@ -169,6 +169,19 @@ function PwHideShow2() {
 	}
 }
 
+function PwShowHide() {
+	var x = document.getElementById("passcodeshow");
+	if (x.type === "text") {
+		x.type = "password";
+		$('#hide_show_password i').addClass( "fa-eye-slash" );
+		$('#hide_show_password i').removeClass( "fa-eye" );
+	} else {
+		x.type = "text";
+		$('#hide_show_password i').removeClass( "fa-eye-slash" );
+		$('#hide_show_password i').addClass( "fa-eye" );
+	}
+}
+
 /** Mobile link target **/
 function FnPhoneURLTarget(elem) {
 	var phoneurl;

@@ -67,7 +67,7 @@
 							<ul class="submenu dropdown-menu">
 								<li><a class="dropdown-item" href="<?php echo $baklnk; ?>routes/setgener">General</a></li>
 								<li><a class="dropdown-item" href="#">Main Menu</a></li>
-								<li><a class="dropdown-item" href="#">Address</a></li>
+								<li><a class="dropdown-item" href="<?php echo $baklnk; ?>routes/address">Address</a></li>
 							</ul>
 						</li>
 						<li><a class="dropdown-item border-top" href="<?php echo $baklnk; ?>routes/chngepss">Change Password </a></li>
