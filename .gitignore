@@ -1,5 +1,20 @@
 # run/
-# notes/
+applib/
+staging/
+notes/
+storage/
+inc/srvr.php
 
-content/theme/default/storage/item/
-content/theme/default/storage/profile/
+content/theme/termarshardwareandconstruction/storage/img/item/
+content/theme/termarshardwareandconstruction/storage/img/profile/
+content/view/index/
+
+sendmail.ini
+database.php
+notes.txt
+# 401.html
+# 403.html
+# 404.html
+.htaccess
+*.sql
+*.bak
