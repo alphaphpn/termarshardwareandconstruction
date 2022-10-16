@@ -1,6 +1,6 @@
-]<?php
-	include_once "../../content/template-part/{$themename}/dashboard-navbar.php";
-	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
+<?php
+	include_once "../../../content/template-part/{$themename}/dashboard-navbar.php";
+	include_once "../../../content/template-part/{$themename}/dashboard-navbar-top.php";
 ?>
 
 <link rel="stylesheet" href="<?php echo $dirbak; ?>assets/datatables/1.11.3/css/jquery.dataTables.min.css">
@@ -21,17 +21,17 @@
 		<div class="d-flex">
 			<h4 class="mr-2 mb-2">Order(s)</h4>
 			<div class="text-right w-100 mb-3">
-				<a class="btn btn-outline-primary m-1" href="<?php echo $dirbak; ?>routes/item-order">All</a>
-				<a class="btn btn-outline-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/process">Process</a>
-				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/unpaid">Unpaid</a>
-				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order/canceled">Canceled</a>
-				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order/paid">Paid</a>
-				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/checkout">Checkout</a>
-				<a class="btn btn-info m-1" href="<?php echo $dirbak; ?>routes/item-order/reviewed">Reviewed</a>
-				<a class="btn btn-primary m-1" href="<?php echo $dirbak; ?>routes/item-order/approved">Approved</a>
-				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order/declined">Declined</a>
-				<a class="btn btn-secondary m-1" href="<?php echo $dirbak; ?>routes/item-order/shipped">Shipped</a>
-				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order/completed">Completed</a>
+				<a class="btn btn-outline-primary" href="<?php echo $dirbak; ?>routes/item-order">All</a>
+				<a class="btn btn-outline-danger" href="<?php echo $dirbak; ?>routes/item-order/process">Process</a>
+				<a class="btn btn-danger" href="<?php echo $dirbak; ?>routes/item-order/unpaid">Unpaid</a>
+				<a class="btn btn-warning" href="<?php echo $dirbak; ?>routes/item-order/canceled">Canceled</a>
+				<a class="btn btn-success" href="<?php echo $dirbak; ?>routes/item-order/paid">Paid</a>
+				<a class="btn btn-danger" href="<?php echo $dirbak; ?>routes/item-order/checkout">Checkout</a>
+				<a class="btn btn-info" href="<?php echo $dirbak; ?>routes/item-order/reviewed">Reviewed</a>
+				<a class="btn btn-primary" href="<?php echo $dirbak; ?>routes/item-order/approved">Approved</a>
+				<a class="btn btn-warning" href="<?php echo $dirbak; ?>routes/item-order/declined">Declined</a>
+				<a class="btn btn-secondary" href="<?php echo $dirbak; ?>routes/item-order/shipped">Shipped</a>
+				<a class="btn btn-success" href="<?php echo $dirbak; ?>routes/item-order/completed">Completed</a>
 			</div>
 		</div>
 
@@ -180,7 +180,7 @@
 									<a href="#" class="btn-sm btn-success btn-inline" title="Edit">
 										<span class="far fa-edit"></span>
 									</a>
-									<a class="btn-sm btn-dark btn-inline ml-1" href="../../content/view/user/deteled.php?orderid={$orderid}" title="Delete">
+									<a class="btn-sm btn-dark btn-inline ml-1" href="../../../content/view/user/deteled.php?orderid={$orderid}" title="Delete">
 										<span class="fas fa-trash-alt"></span>
 									</a>
 								</td>
@@ -316,17 +316,17 @@
 	function trash(id) {
 		var answer = confirm('Delete record Ctrl#'+id+' ?');
 		if (answer) {
-			window.location = '../../content/view/item-order/deteled.php?upidid=' + id;
+			window.location = '../../../content/view/item-order/deteled.php?upidid=' + id;
 		} 
 	}
 
 	function fnChngeRenarks(id,remark) {
-		window.location = '../../content/view/item-order/update-remarks.php?orderid=' + id + '&remaks=' + remark;
+		window.location = '../../../content/view/item-order/update-remarks.php?orderid=' + id + '&remaks=' + remark;
 		console.log(id, remark);
 	}
 
 	function fnChngeStatus(id,status) {
-		window.location = '../../content/view/item-order/update-status.php?orderid=' + id + '&status=' + status;
+		window.location = '../../../content/view/item-order/update-status.php?orderid=' + id + '&status=' + status;
 		console.log(id, status);
 	}
 </script>

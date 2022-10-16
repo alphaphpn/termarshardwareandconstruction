@@ -62,7 +62,7 @@
 			if ($sidelogdbr=1) {
 				?>
 					<a href="<?php echo $baklnk; ?>" class="text-left">
-						<img src="<?php echo $baklnk.'content/theme/'.$themename.'/storage/img/'.$syslogo; ?>" class="dboard-top-left-logo">
+						<img src="<?php echo $baklnk.'content/theme/'.$themename.'/storage/img/Logo-Dashboard-Header.png'; ?>" class="dboard-top-left-logo">
 					</a>
 				<?php
 			} else {
@@ -92,7 +92,7 @@
 					</a>
 				</li>
 				<li class="sidebar-dropdown">
-					<a href="#" title="User">
+					<a href="<?php echo $baklnk; ?>routes/user" title="User">
 						<i class="fas fa-users"></i>
 						<span>User</span>
 					</a>
@@ -103,6 +103,18 @@
 									?>
 										<li>
 											<a href="<?php echo $baklnk; ?>routes/user">All User</a>
+										</li>
+										<li>
+											<a href="<?php echo $baklnk; ?>routes/user">Admin</a>
+										</li>
+										<li>
+											<a href="<?php echo $baklnk; ?>routes/user">Cashier</a>
+										</li>
+										<li>
+											<a href="<?php echo $baklnk; ?>routes/user">Rider</a>
+										</li>
+										<li>
+											<a href="<?php echo $baklnk; ?>routes/user">Customer</a>
 										</li>
 										<li>
 											<a href="<?php echo $baklnk; ?>routes/user/addnew">Add New</a>
@@ -128,10 +140,25 @@
 						</li>
 
 						<li class="sidebar-dropdown">
-							<a href="<?php echo $baklnk; ?>routes/item-order" title="Orders">
+							<a href="#" title="Orders">
 								<i class="fas fa-shopping-cart"></i>
 								<span>Orders</span>
 							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order">All</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/process">Process</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/unpaid">Unpaid</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/canceled">Canceled</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/paid">Paid</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/checkout">Checkout</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/reviewed">Reviewed</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/approved">Approved</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/declined">Declined</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/shipped">Shipped</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order/completed">Completed</a></li>
+								</ul>
+							</div>
 						</li>
 
 						<li class="sidebar-dropdown"> <!-- Reporst -->

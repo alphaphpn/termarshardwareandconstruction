@@ -1,5 +1,5 @@
 <?php
-	include_once "../../../content/template-part/".$themename."/dashboard-navbar.php";
+	include_once "../../../content/template-part/{$themename}/dashboard-navbar.php";
 	include_once "../../../content/template-part/{$themename}/dashboard-navbar-top.php";
 	include_once "../../../inc/core.php";
 	include_once "../../../inc/srvr.php";
@@ -52,7 +52,7 @@
 			</div>
 			<div class="row justify-content-end">
 				<input type="submit" name="btnUpdate" value="Update" class="btn btn-warning btn-sm m-2">
-				<a href="../../../routes/crud-datatable" class="btn btn-danger btn-sm m-2">Close</a>
+				<a href="../../../routes/item" class="btn btn-danger btn-sm m-2">Close</a>
 			</div>
 		</form>
 	</div>
@@ -79,7 +79,7 @@
 				$stmt_insert->execute();
 
 				$err_msg = "Update successfully.";
-				echo "<script>alert('".$err_msg."');window.location='../../../routes/crud-datatable/editupdate?id=".$idedit."'</script>";
+				echo "<script>alert('".$err_msg."');window.location='../../../routes/item/editupdate?id=".$idedit."'</script>";
 			}
 		}
 	} catch (PDOException $error) {

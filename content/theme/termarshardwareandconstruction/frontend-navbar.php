@@ -1,3 +1,19 @@
+<script>
+	function chkPage() {
+		var curr_dirpage = window.location.pathname;
+		var pathElements = curr_dirpage.replace(/\/$/, '').split('/');
+		const lst_pgeurl = pathElements[pathElements.length - 1];
+
+		console.log(lst_pgeurl);
+
+		if (lst_pgeurl=="products") {
+			
+		} else {
+			window.open(curr_dirpage+"routes/products","_self");
+		}
+	}
+</script>
+
 <section id="secnavbr" class="<?php echo $navbarorrient; ?>" style="<?php echo 'background-color: '.$forthcolor.';'; ?>">
 	<nav id="navbar" class="navbar navbar-expand-sm navbar-danger <?php echo $contentwidth; ?>">
 		<a class="navbar-brand" href="<?php echo $domainhome; ?>">
@@ -44,7 +60,7 @@
 								<form>
 									<div class="form-group mb-0 mr-3">
 										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Search Product" name="searchproduct" onkeyup="showResult(this.value)">
+											<input id="searchproduct" type="text" class="form-control" placeholder="Search Product" name="searchproduct" onkeyup="productSearch(this.value)" onfocus="chkPage();" onclick="chkPage();">
 											<div class="input-group-prepend">
 												<span class="input-group-text">
 													<i class="fas fa-search" aria-hidden="true"></i>
@@ -52,7 +68,6 @@
 											</div>
 										</div>
 									</div>
-									<div id="livesearch"></div>
 								</form>
 							</li>
 
@@ -149,3 +164,31 @@
 		</div>
 	</nav>
 </section>
+
+<script>
+	function productSearch(str) {
+		var dir_myhome = "<?php echo $domainhome; ?>";
+		var curr_dirpage = window.location.pathname;
+		var pathElements = curr_dirpage.replace(/\/$/, '').split('/');
+		const lst_pgeurl = pathElements[pathElements.length - 1];
+
+		console.log(lst_pgeurl);
+
+		if (lst_pgeurl=="products") {
+			if (str == "") {
+				location.reload();
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("listofproducts").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", dir_myhome+"content/view/products/prodsresult.php?product=" + str, true);
+				xmlhttp.send();
+			}
+		} else {
+			window.open(dir_myhome+"routes/products","_self");
+		}
+	}
+</script>

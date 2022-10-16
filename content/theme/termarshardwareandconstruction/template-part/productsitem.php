@@ -27,7 +27,7 @@
 		$("#itmvwimgfl3").attr("style","background-image: url('"+img+"');");
 		$("#temidon").attr("data-iditem",theitemiz);
 		$('#ghtitle').html(prodtitle);
-		$('#ghprice').html(curnzy+prodprice);
+		$('#ghprice').html(curnzy+prodprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 		$('#ghsize').html(prodsize);
 		$('#ghcolor').html(prodcolor);
 		$('#ghquality').html(prodquality);
@@ -37,7 +37,7 @@
 </script>
 
 	<div id="productitemz" class="<?php echo $contentwidth; ?>">
-		<h2>Products</h2>
+		<h2>Products (New)</h2>
 
 		<div class="pt-5 pb-5">
 			<div class="card-deck align-items-center slick-products">
@@ -55,7 +55,7 @@
 					</div>
 					<div class="card-body text-right p-1">
 						<h5 class="card-title mb-0"><?php echo $name; ?></h5>
-						<p class="card-text mb-0"><?php echo $dcurrencyx.' '.$sell_price; ?></p>
+						<p class="card-text mb-0"><?php echo $dcurrencyx.' '.number_format($sell_price,2); ?></p>
 						<div class="text-center"><a href="#" class="btn btn-link" onclick="document.getElementById('<?php echo $id4img; ?>').click();">See details</a></div>		
 					</div>
 					<div class="card-footer">
@@ -82,6 +82,10 @@
 			?>
 
 			</div>
+		</div>
+
+		<div class="w-100 text-center">
+			<a class="btn btn-warning" href="routes/products">View all</a>
 		</div>
 	</div>
 </div>
