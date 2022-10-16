@@ -6,15 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta http-equiv="refresh" content="<?php echo $idletime ?>">
-	<title>
-		<?php
-			if (empty($page_title)) {
-				echo $sysname;
-			} else {
-				echo $sysname.": ".$page_title;
-			}
-		?>
-	</title>
+	<title><?php echo $page_title; ?></title>
 	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
 	<meta name="google-signin-scope" content="profile email">

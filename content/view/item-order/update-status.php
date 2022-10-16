@@ -41,7 +41,7 @@
 			$cnn->exec($qry_update);
 		}
 
-		echo '<script>window.open("../../../routes/item-order","_self");</script>';
+		echo '<script>window.open("../../../routes/item-order?strem=2","_self");</script>';
 	} catch (PDOException $exception) {
 		die('ERROR: ' . $exception->getMessage());
 	}

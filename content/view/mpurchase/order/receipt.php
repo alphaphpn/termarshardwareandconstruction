@@ -56,7 +56,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6"><label>Order ID: <?php echo $pcurr_ordrid; ?></label></div>
-					<div class="col-md-6"><label>Receipt#: <?php echo $precpno; ?></label></div>
+					<div class="col-md-6"><label id="therptno">Receipt#: <?php echo $precpno; ?></label></div>
 				</div>
 				<div class="row">
 					<div class="col-md-6"><label>Remarks: <?php echo $prmrksz; ?></label></div>
@@ -201,6 +201,13 @@
 		</div>
 	</div>
 </div>
+
 <script>
+	let title_el = document.querySelector("title");
+
+	if (title_el) {
+		title_el.innerHTML = document.getElementById("therptno").innerHTML;
+	}
+
 	window.print();
 </script>

@@ -102,7 +102,7 @@
 						switch (true) {
 							case ($prmrksz=='Checkout' and $pstatus=='Unpaid'):
 								?>
-									<a href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-danger">Cancel Order</a>
+									<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#ymModalCancelOrder">Cancel Order</a>
 								<?php
 								break;
 
@@ -120,7 +120,7 @@
 
 							case ($prmrksz=='Reviewed' and $pstatus=='Unpaid'):
 								?>
-									<a href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-danger">Cancel Order</a>
+									<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#ymModalCancelOrder">Cancel Order</a>
 								<?php
 								break;
 
@@ -139,7 +139,7 @@
 							case ($prmrksz=='Approved' and $pstatus=='Unpaid'):
 								?>
 									<a href="../../../routes/mpurchase/order/receipt.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-info">Print Preview</a>
-									<a href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-danger">Cancel Order</a>
+									<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#ymModalCancelOrder">Cancel Order</a>
 								<?php
 								break;
 
@@ -170,7 +170,7 @@
 							case ($prmrksz=='Shipped' and $pstatus=='Unpaid'):
 								?>
 									<a href="../../../routes/mpurchase/order/receipt.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-info">Print Preview</a>
-									<a href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-danger">Cancel Order</a>
+									<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#ymModalCancelOrder">Cancel Order</a>
 								<?php
 								break;
 
@@ -200,7 +200,7 @@
 
 							default:
 								?>
-									<a href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>" class="btn btn-danger">Cancel Order</a>
+									<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#ymModalCancelOrder">Cancel Order</a>
 								<?php
 								break;
 						}
@@ -409,7 +409,7 @@
 
 							} else {
 								?>
-									<a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#ymModalGCashPay"s>
+									<a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#ymModalGCashPay">
 										<i>&#8369;</i> Pay using Reference Info.
 									</a>
 								<?php
@@ -505,6 +505,61 @@
 			<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="ymModalCancelOrder">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h4 class="modal-title">Reason for Cancelation:</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Need to change delivery address.
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Need to edit order.
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Found cheaper elsewhere.
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Don't want to buy anymore.
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Seller is not responsive.
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio">Other.
+					</label>
+				</div>
+				<div class="form-group">
+					<textarea class="form-control"></textarea>
+				</div>
+			</div>
+
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<a class="btn btn-success" href="../../../content/view/mpurchase/order/cancel-order.php?orderid=<?php echo $pcurr_ordrid; ?>">Submit</a>
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 			</div>
 		</div>
