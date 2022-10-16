@@ -22,3 +22,4 @@
 	<script src="//apis.google.com/js/platform.js" async defer></script>
 </head>
 <body id="myAuth" class="bg-light" data-spy="scroll" data-target=".navbar" data-offset="60" oncontextmenu="return false;">
+	<div style="background-image: url('../../storage/img/termars-auth-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; background-attachment: fixed; height: 100vh;">

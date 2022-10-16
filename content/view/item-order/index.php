@@ -1,6 +1,12 @@
 ]<?php
 	include_once "../../content/template-part/{$themename}/dashboard-navbar.php";
 	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
+	$updatestatz = trim($_GET['whatnow']);
+	$stremgg = trim($_GET['strem']);
+	$labelcat = 'Order(s)';
+	if ($updatestatz) {
+		$labelcat = 'Order(s): '.$updatestatz;
+	}
 ?>
 
 <link rel="stylesheet" href="<?php echo $dirbak; ?>assets/datatables/1.11.3/css/jquery.dataTables.min.css">
@@ -19,19 +25,19 @@
 <main class="page-content">
 	<div class="container-fluid bg-light-opacity">
 		<div class="d-flex">
-			<h4 class="mr-2 mb-2">Order(s)</h4>
+			<h4 class="mr-2 mb-2"><?php echo $labelcat; ?></h4>
 			<div class="text-right w-100 mb-3">
-				<a class="btn btn-outline-primary m-1" href="<?php echo $dirbak; ?>routes/item-order">All</a>
-				<a class="btn btn-outline-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/process">Process</a>
-				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/unpaid">Unpaid</a>
-				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order/canceled">Canceled</a>
-				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order/paid">Paid</a>
-				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order/checkout">Checkout</a>
-				<a class="btn btn-info m-1" href="<?php echo $dirbak; ?>routes/item-order/reviewed">Reviewed</a>
-				<a class="btn btn-primary m-1" href="<?php echo $dirbak; ?>routes/item-order/approved">Approved</a>
-				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order/declined">Declined</a>
-				<a class="btn btn-secondary m-1" href="<?php echo $dirbak; ?>routes/item-order/shipped">Shipped</a>
-				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order/completed">Completed</a>
+				<a class="btn btn-outline-primary m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=2">All</a>
+				<a class="btn btn-outline-secondary m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Process">Process</a>
+				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=1&whatnow=Unpaid">Unpaid</a>
+				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=1&whatnow=Cancel">Canceled</a>
+				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=1&whatnow=Paid">Paid</a>
+				<a class="btn btn-danger m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Checkout">Checkout</a>
+				<a class="btn btn-info m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Reviewed">Reviewed</a>
+				<a class="btn btn-primary m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Approved">Approved</a>
+				<a class="btn btn-warning m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Declined">Declined</a>
+				<a class="btn btn-secondary m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Shipped">Shipped</a>
+				<a class="btn btn-success m-1" href="<?php echo $dirbak; ?>routes/item-order?strem=0&whatnow=Complete">Complete</a>
 			</div>
 		</div>
 
@@ -108,10 +114,18 @@
 						$tblname = "tbl_order_customer";
 						$prim_id = "order_id";
 						$cnn = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
-						$qry = "SELECT * FROM {$tblname} WHERE deleted=0 AND remarks<>:rmrkz ORDER BY {$prim_id} DESC";
-						$stmt = $cnn->prepare($qry);
-						$rmrkz = 'Process';
-						$stmt->bindParam(':rmrkz', $rmrkz);
+						if ($stremgg==0) {
+							$qry = "SELECT * FROM {$tblname} WHERE deleted=0 AND remarks=:rmrkz ORDER BY {$prim_id} DESC";
+							$stmt = $cnn->prepare($qry);
+							$stmt->bindParam(':rmrkz', $updatestatz);
+						} elseif ($stremgg==1) {
+							$qry = "SELECT * FROM {$tblname} WHERE deleted=0 AND status=:rmrkz ORDER BY {$prim_id} DESC";
+							$stmt = $cnn->prepare($qry);
+							$stmt->bindParam(':rmrkz', $updatestatz);
+						} elseif ($stremgg==2) {
+							$qry = "SELECT * FROM {$tblname} WHERE deleted=0 ORDER BY {$prim_id} DESC";
+							$stmt = $cnn->prepare($qry);
+						}
 						$stmt->execute();
 
 						for($i=0; $row = $stmt->fetch(); $i++) {
@@ -188,6 +202,7 @@
 								<td data-filter="<?php echo $remarks; ?>" class="d-none"><?php echo $remarks; ?></td>
 								<td data-filter="<?php echo $remarks; ?>">
 									<select name="remarks" class="<?php echo $rbsTxtColor; ?>" onchange="fnChngeRenarks(<?php echo $orderid; ?>,this.value);">
+										<option value="Process" class="text-muted" <?php if($remarks=='Process') echo 'selected="selected"'; ?>>Process</option>
 										<option value="Checkout" class="text-danger" <?php if($remarks=='Checkout') echo 'selected="selected"'; ?>>Checkout</option>
 										<option value="Reviewed" class="text-info" <?php if($remarks=='Reviewed') echo 'selected="selected"'; ?>>Reviewed</option>
 										<option value="Approved" class="text-primary" <?php if($remarks=='Approved') echo 'selected="selected"'; ?>>Approved</option>

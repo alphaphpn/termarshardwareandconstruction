@@ -1,6 +1,13 @@
 <?php
 	include_once "../../content/template-part/{$themename}/dashboard-navbar.php";
 	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
+	$categoryad = trim($_GET['category']);
+	$labelcat = 'Item';
+	$btnactivcatg3 = 'btn-info';
+	if ($categoryad) {
+		$labelcat = $categoryad;
+		$btnactivcatg3 = 'btn-outline-info';
+	}
 ?>
 
 <link rel="stylesheet" href="<?php echo $dirbak; ?>assets/datatables/1.11.3/css/jquery.dataTables.min.css">
@@ -9,8 +16,24 @@
 <main class="page-content">
 	<div class="container-fluid bg-light-opacity">
 		<div class="d-flex">
-			<h4 class="mr-2 mb-2">Items</h4>
-			<a href="../../routes/item/addnew" class="btn btn-outline-info btn-sm mr-2 mb-2">Add New</a>
+			<h4 class="mr-2 mb-2"><?php echo $labelcat; ?></h4>
+			<a href="../../routes/item/addnew" class="btn btn-outline-danger mr-2 mb-2">Add New</a>
+			<a href="../../routes/item" class="btn <?php echo $btnactivcatg3; ?> mr-2 mb-2">All</a>
+			<?php
+				$qrybycateggrp2 = $cnn->prepare("SELECT category FROM tblitem WHERE deletedx=0 GROUP BY category ORDER BY category ASC");
+				$qrybycateggrp2->execute();
+				$rsltbycateggrp2 = $qrybycateggrp2->setFetchMode(PDO::FETCH_ASSOC);
+				foreach ($qrybycateggrp2 as $rsltbycateggrp2) {
+					$categnowz2 = $rsltbycateggrp2['category'];
+					$btnactivcatg = 'btn-outline-info';
+					if ($categnowz2==$categoryad) {
+						$btnactivcatg = 'btn-info';
+					}
+					?>
+					<a href="<?php echo '../../routes/item?category='.$categnowz2; ?>" class="btn <?php echo $btnactivcatg; ?> mr-2 mb-2"><?php echo $categnowz2; ?></a>
+					<?php
+				}
+			?>
 		</div>
 
 		<div id="" class="table-responsive-sm">
@@ -38,8 +61,14 @@
 						$tblname = "tblitem";
 						$prim_id = "item_id";
 						$cnn = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
-						$qry = "SELECT * FROM {$tblname} WHERE deletedx=0 ORDER BY {$prim_id} DESC";
-						$stmt = $cnn->prepare($qry);
+						if ($categoryad) {
+							$qry = "SELECT * FROM {$tblname} WHERE category=:categoryx AND deletedx=0 ORDER BY {$prim_id} DESC";
+							$stmt = $cnn->prepare($qry);
+							$stmt->bindValue(":categoryx", $categoryad);
+						} else {
+							$qry = "SELECT * FROM {$tblname} WHERE deletedx=0 ORDER BY {$prim_id} DESC";
+							$stmt = $cnn->prepare($qry);
+						}
 						$stmt->execute();
 						$xno = 0;
 

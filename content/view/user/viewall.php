@@ -3,8 +3,15 @@
 	$tblname = "tblsysuser";
 	$prim_id = "usercode";
 	include_once "../../inc/cnndb.php";
-	$qry = "SELECT username, fullname, uemail, umobileno, xposition, ulevpos, uonline, ustatz, createdby, modified, created, {$prim_id} FROM {$tblname} WHERE deletedx=0 ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
-	$stmt = $cnn->prepare($qry);
+	$usertype = isset($_GET['usertype']) ? $_GET['usertype'] : '';
+	if ($usertype) {
+		$qry = "SELECT * FROM {$tblname} WHERE xposition=:usertypex AND deletedx=0 ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
+		$stmt = $cnn->prepare($qry);
+		$stmt->bindParam(":usertypex", $usertype);
+	} else {
+		$qry = "SELECT * FROM {$tblname} WHERE deletedx=0 ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
+		$stmt = $cnn->prepare($qry);
+	}
 	$stmt->bindParam(":from_record_num", $from_record_num, PDO::PARAM_INT);
 	$stmt->bindParam(":records_per_page", $records_per_page, PDO::PARAM_INT);
 	$stmt->execute();

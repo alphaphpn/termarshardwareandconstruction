@@ -103,7 +103,6 @@ footer.footer p {
 }
 
 #myAuth footer {
-	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -179,7 +178,7 @@ footer.footer p {
 }
 
 #ymModalItemPreviewFront .modal-body div.position-absolute {
-	top: 26px;
+	bottom: 26px;
 	right: 26px;
 }
 

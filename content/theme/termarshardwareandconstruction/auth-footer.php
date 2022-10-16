@@ -1,4 +1,5 @@
-	<footer class="container-fluid text-center footer pt-2">
+	</div>
+	<footer class="container-fluid text-center footer py-2">
 		<a href="#myPage" title="To Top">
 			<span class="glyphicon glyphicon-chevron-up"></span>
 		</a>

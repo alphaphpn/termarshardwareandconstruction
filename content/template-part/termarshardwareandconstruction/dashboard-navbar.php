@@ -15,42 +15,6 @@
 	}
 ?>
 
-<!-- style type="text/css">
-	nav#sidebar {
-		background: blue;
-	}
-
-	nav#sidebar .sidebar-brand a {
-		color: #fff;
-	}
-
-	nav#sidebar .sidebar-header .user-info span {
-		color: red;
-	}
-
-	nav#sidebar .sidebar-header .user-pic-circle {
-		padding: unset;
-		border-radius: 30px;
-	}
-
-	nav#sidebar .header-menu span {
-		color: #fff000;
-	}
-
-	nav#sidebar .sidebar-menu ul li a i {
-		background: red;
-		color: pink;
-	}
-
-	nav#sidebar .sidebar-menu ul li a span {
-		color: pink;
-	}
-
-	nav#sidebar .sidebar-menu ul li a:after {
-		color: purple;
-	}
-</style -->
-
 <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
 	<i class="fas fa-bars"></i>
 </a>
@@ -92,7 +56,7 @@
 					</a>
 				</li>
 				<li class="sidebar-dropdown">
-					<a href="<?php echo $baklnk; ?>routes/user" title="User">
+					<a href="#" title="User">
 						<i class="fas fa-users"></i>
 						<span>User</span>
 					</a>
@@ -105,16 +69,16 @@
 											<a href="<?php echo $baklnk; ?>routes/user">All User</a>
 										</li>
 										<li>
-											<a href="<?php echo $baklnk; ?>routes/user">Admin</a>
+											<a href="<?php echo $baklnk; ?>routes/user?usertype=Administrator">Admin</a>
 										</li>
 										<li>
-											<a href="<?php echo $baklnk; ?>routes/user">Cashier</a>
+											<a href="<?php echo $baklnk; ?>routes/user?usertype=Cashier">Cashier</a>
 										</li>
 										<li>
 											<a href="<?php echo $baklnk; ?>routes/user">Rider</a>
 										</li>
 										<li>
-											<a href="<?php echo $baklnk; ?>routes/user">Customer</a>
+											<a href="<?php echo $baklnk; ?>routes/user?usertype=Customer">Customer</a>
 										</li>
 										<li>
 											<a href="<?php echo $baklnk; ?>routes/user/addnew">Add New</a>
@@ -133,10 +97,27 @@
 					if ($_SESSION["ulevpos"]==1) {
 						?>
 						<li class="sidebar-dropdown">
-							<a href="<?php echo $baklnk; ?>routes/item" title="Products">
+							<a href="#" title="Products">
 								<i class="fas fa-shopping-bag"></i>
 								<span>Products</span>
 							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li><a href="<?php echo $baklnk; ?>routes/item">All Product</a></li>
+									<?php
+										include_once $baklnk."inc/cnndb.php";
+										$qrybycateggrp = $cnn->prepare("SELECT category FROM tblitem WHERE deletedx=0 GROUP BY category ORDER BY category ASC");
+										$qrybycateggrp->execute();
+										$rsltbycateggrp = $qrybycateggrp->setFetchMode(PDO::FETCH_ASSOC);
+										foreach ($qrybycateggrp as $rsltbycateggrp) {
+											$categnowz = $rsltbycateggrp['category'];
+											?>
+											<li><a href="<?php echo $baklnk.'routes/item?category='.$categnowz; ?>"><?php echo $categnowz; ?></a></li>
+											<?php
+										}
+									?>
+								</ul>
+							</div>
 						</li>
 
 						<li class="sidebar-dropdown">
@@ -146,17 +127,25 @@
 							</a>
 							<div class="sidebar-submenu">
 								<ul>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order">All</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/process">Process</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/unpaid">Unpaid</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/canceled">Canceled</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/paid">Paid</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/checkout">Checkout</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/reviewed">Reviewed</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/approved">Approved</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/declined">Declined</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/shipped">Shipped</a></li>
-									<li><a href="<?php echo $baklnk; ?>routes/item-order/completed">Completed</a></li>
+									<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=2">All</a></li>
+									<li><a href="#" title="Remarks">Remarks</a>
+										<ul>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Process">Process</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Checkout">Checkout</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Reviewed">Reviewed</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Approved">Approved</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Declined">Declined</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Shipped">Shipped</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=0&whatnow=Complete">Complete</a></li>
+										</ul>
+									</li>
+									<li><a href="#" title="Status">Status</a>
+										<ul>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=1&whatnow=Unpaid">Unpaid</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=1&whatnow=Cancel">Cancel</a></li>
+											<li><a href="<?php echo $baklnk; ?>routes/item-order?strem=1&whatnow=Paid">Paid</a></li>
+										</ul>
+									</li>
 								</ul>
 							</div>
 						</li>

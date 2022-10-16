@@ -1,6 +1,13 @@
 <?php
 	include_once "../../content/template-part/".$themename."/dashboard-navbar.php";
 	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
+
+	$usertypeget = isset($_GET['usertype']) ? $_GET['usertype'] : '';
+	if ($usertypeget) {
+		$labelusertype = $usertypeget;
+	} else {
+		$labelusertype = 'User';
+	}
 ?>
 
 <script>
@@ -60,10 +67,10 @@
 <main class="page-content">
 	<div class="container-fluid bg-light-opacity">
 		<div class="d-flex">
-			<h4 class="mr-2 mb-2">User</h4>
-			<a href="../../routes/user/addnew" class="btn btn-outline-info btn-sm mr-2 mb-2">Add New</a>
+			<h4 class="mr-2 mb-2"><?php echo $labelusertype; ?></h4>
+			<a href="../../routes/user/addnew" class="btn btn-danger mr-2 mb-2">Add New</a>
 
-			<div class="mr-2">
+			<div class="mr-2 d-none">
 				<form>
 					<div class="input-group input-group-sm">
 						<div class="input-group-prepend">
@@ -74,7 +81,7 @@
 				</form>
 			</div>
 
-			<div class="mr-2">
+			<div class="mr-2 d-none">
 				<form>
 					<div class="input-group input-group-sm">
 						<div class="input-group-prepend">
@@ -98,7 +105,7 @@
 				</form>
 			</div>
 
-			<div class="mr-2">
+			<div class="mr-2 d-none">
 				<form>
 					<div class="input-group input-group-sm date" id="datetimepicker1">
 						<div class="input-group-prepend">
@@ -110,6 +117,62 @@
 						</span>
 					</div>
 				</form>
+			</div>
+
+			<div class="mr-2">
+				<?php
+					switch (true) {
+						case ($usertypeget=='Administrator'):
+							?>
+								<a href="../../routes/user" class="btn btn-outline-secondary">All User</a>
+								<a href="../../routes/user?usertype=Administrator" class="btn btn-secondary">Administrator</a>
+								<a href="../../routes/user?usertype=Cashier" class="btn btn-outline-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Rider" class="btn btn-outline-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Customer" class="btn btn-outline-secondary">Customer</a>
+							<?php
+						break;
+
+						case ($usertypeget=='Cashier'):
+							?>
+								<a href="../../routes/user" class="btn btn-outline-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Administrator" class="btn btn-outline-secondary">Administrator</a>
+								<a href="../../routes/user?usertype=Cashier" class="btn btn-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Rider" class="btn btn-outline-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Customer" class="btn btn-outline-secondary">Customer</a>
+							<?php
+						break;
+
+						case ($usertypeget=='Rider'):
+							?>
+								<a href="../../routes/user" class="btn btn-outline-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Administrator" class="btn btn-outline-secondary">Administrator</a>
+								<a href="../../routes/user?usertype=Cashier" class="btn btn-outline-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Rider" class="btn btn-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Customer" class="btn btn-outline-secondary">Customer</a>
+							<?php
+						break;
+
+						case ($usertypeget=='Customer'):
+							?>
+								<a href="../../routes/user" class="btn btn-outline-secondary">Customer</a>
+								<a href="../../routes/user?usertype=Administrator" class="btn btn-outline-secondary">Administrator</a>
+								<a href="../../routes/user?usertype=Cashier" class="btn btn-outline-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Rider" class="btn btn-outline-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Customer" class="btn btn-secondary">Customer</a>
+							<?php
+						break;
+
+						default:
+							?>
+								<a href="../../routes/user" class="btn btn-secondary">All User</a>
+								<a href="../../routes/user?usertype=Administrator" class="btn btn-outline-secondary">Administrator</a>
+								<a href="../../routes/user?usertype=Cashier" class="btn btn-outline-secondary">Cashier</a>
+								<a href="../../routes/user?usertype=Rider" class="btn btn-outline-secondary">Rider</a>
+								<a href="../../routes/user?usertype=Customer" class="btn btn-outline-secondary">Customer</a>
+							<?php
+						break;
+					}
+				?>
 			</div>
 		</div>
 

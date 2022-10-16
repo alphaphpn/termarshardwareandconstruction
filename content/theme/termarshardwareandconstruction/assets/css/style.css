@@ -40,8 +40,8 @@
 }
 
 #ymModalItemPreviewFront .card {
-	min-width: 272px;
-	background: rgb(255 255 255 / 60%);
+	min-width: 300px;
+	background: rgb(10 10 10 / 85%);
 }
 
 /** Slick Start **/

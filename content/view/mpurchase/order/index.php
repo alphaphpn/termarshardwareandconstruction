@@ -401,6 +401,21 @@
 						<a href="../../../" class="text-dark text-decoration-none pr-3 mr-3">
 							<i>&#8592;</i> to Homepage
 						</a>
+						
+						<?php
+							if ( $pstatus=='Paid' ) {
+								
+							} elseif ( $pstatus=='Cancel' ) {
+
+							} else {
+								?>
+									<a href="#" class="btn btn-outline-dark" data-toggle="modal" data-target="#ymModalGCashPay"s>
+										<i>&#8369;</i> Pay using Reference Info.
+									</a>
+								<?php
+							}
+						?>
+
 						<a href="../../../routes/mpurchase" class="btn btn-success">
 							<i>&#8592;</i> Back
 						</a>
@@ -454,7 +469,61 @@
 	</div>
 </div>
 
-<script type="text/javascript">
+<div class="modal" id="ymModalGCashPay">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<h3>Pay thru: GCash, MLhuilier or Palawan</h3>
+				<hr>
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Reference Number" id="refno" name="refno">
+					</div>
+					<div class="form-group">
+						<input type="number" class="form-control" placeholder="Amount Sent" id="amtsent" name="amtsent">
+					</div>
+					<div class="form-group">
+						<label for="datepaid">Date Paid/Sent:</label>
+						<input type="date" class="form-control" placeholder="Date Paid/Sent" id="datepaid" name="datepaid">
+					</div>
+					<div class="form-group">
+						<label for="refimg">Attach supporting receipt:</label>
+						<input type="file" class="form-control-file border" id="refimg" name="refimg">
+					</div>
+					<div class="form-group text-center">
+						<img id="refpayimg" src="../../../storage/img/no-image.jpg" class="img-thumbnail" style="max-height: 258px;">
+					</div>
+			</div>
+
+			<!-- Modal footer -->
+			<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	window.addEventListener('load', function() {
+		document.querySelector('#refimg').addEventListener('change', function() {
+			if (this.files && this.files[0]) {
+				var img = document.querySelector('#refpayimg');
+				img.onload = () => {
+					URL.revokeObjectURL(img.src);  // no longer needed, free memory
+				}
+				img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+			}
+		});
+	});
+
 	$(document).ready( function () {
 		$('#listRecViewPOrder').DataTable( {
 			initComplete: function () {

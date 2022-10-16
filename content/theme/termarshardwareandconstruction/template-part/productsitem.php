@@ -18,6 +18,7 @@
 		var curnzy = document.getElementById(id).getAttribute('data-currency');
 		var img = document.getElementById(id).getAttribute('data-value');
 		var prodtitle = document.getElementById(id).getAttribute('data-item-name');
+		var itemdescrip = document.getElementById(id).getAttribute('data-item-description');
 		var prodprice = document.getElementById(id).getAttribute('data-price');
 		var prodsize = document.getElementById(id).getAttribute('data-size');
 		var prodcolor = document.getElementById(id).getAttribute('data-color');
@@ -26,6 +27,7 @@
 		var produnit = document.getElementById(id).getAttribute('data-unit');
 		$("#itmvwimgfl3").attr("style","background-image: url('"+img+"');");
 		$("#temidon").attr("data-iditem",theitemiz);
+		$("#gprdescrip").html(itemdescrip);
 		$('#ghtitle').html(prodtitle);
 		$('#ghprice').html(curnzy+prodprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 		$('#ghsize').html(prodsize);
@@ -51,7 +53,7 @@
 
 				<div class="card border-0">
 					<div class="card-header">
-						<img id="<?php echo $id4img; ?>" class="card-img-top img-front-product" style="background-image: url('<?php echo $domainhome."content/theme/".$themename."/storage/img/item/ITEM".$item_id.".".$extnem; ?>');" data-item-id="<?php echo $item_id; ?>" data-unit="<?php echo $unit; ?>" data-currency="<?php echo $dcurrencyx; ?>" data-toggle="modal" data-target="#ymModalItemPreviewFront" data-item-name="<?php echo $name; ?>" data-price="<?php echo $sell_price; ?>" data-size="<?php echo $size; ?>" data-color="<?php echo $color; ?>" data-quality="<?php echo $quality; ?>" data-stock="<?php echo $stock_available; ?>" onclick="getIdOnClick(this.id);" data-value="<?php echo $domainhome."content/theme/".$themename."/storage/img/item/ITEM".$item_id.".".$extnem; ?>">
+						<img id="<?php echo $id4img; ?>" class="card-img-top img-front-product" style="background-image: url('<?php echo $domainhome."content/theme/".$themename."/storage/img/item/ITEM".$item_id.".".$extnem; ?>');" data-item-id="<?php echo $item_id; ?>" data-unit="<?php echo $unit; ?>" data-currency="<?php echo $dcurrencyx; ?>" data-toggle="modal" data-target="#ymModalItemPreviewFront" data-item-name="<?php echo $name; ?>" data-price="<?php echo $sell_price; ?>" data-size="<?php echo $size; ?>" data-color="<?php echo $color; ?>" data-quality="<?php echo $quality; ?>" data-stock="<?php echo $stock_available; ?>" data-item-description="<?php echo $description; ?>" onclick="getIdOnClick(this.id);" data-value="<?php echo $domainhome."content/theme/".$themename."/storage/img/item/ITEM".$item_id.".".$extnem; ?>">
 					</div>
 					<div class="card-body text-right p-1">
 						<h5 class="card-title mb-0"><?php echo $name; ?></h5>
@@ -98,19 +100,27 @@
 				<img id="itmvwimgfl3">
 				<div class="position-absolute">
 					<div class="card">
-						<div class="card-body text-right">
-							<h5 id="ghtitle" class="card-title"></h5>
-							<h4 id="ghprice" class="card-text"></h4>
-							<p class="mb-0" id="ghsize"></p>
-							<p class="mb-0" id="ghcolor"></p>
-							<p class="mb-0 d-none" id="ghquality"></p>
-							<div class="d-flex">
-								<div class="input-group fit-product-qty">
-									<input type="button" value="-" class="button-minus" data-field="quantity">
-									<input id="ghqty" type="number" step="1" min="1" value="1" name="quantity" class="addminusentry text-center" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
-									<input type="button" value="+" class="button-plus" data-field="quantity">
+						<div class="card-body text-right text-light">
+							<h5 id="ghtitle" class="card-title text-right w-100 ml-auto"></h5>
+							<div class="row">
+								<div class="col-sm-5">
+									<h4 id="ghprice" class="card-text"></h4>
+									<p class="mb-0" id="ghsize"></p>
+									<p class="mb-0" id="ghcolor"></p>
+									<p class="mb-0 d-none" id="ghquality"></p>
+									<div class="d-flex">
+										<div class="input-group fit-product-qty">
+											<input type="button" value="-" class="button-minus" data-field="quantity">
+											<input id="ghqty" type="number" step="1" min="1" value="1" name="quantity" class="addminusentry text-center" onkeydown="if(event.key==='.'){event.preventDefault();}" oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+											<input type="button" value="+" class="button-plus" data-field="quantity">
+										</div>
+										<p id="ghunit"></p>
+									</div>
 								</div>
-								<p id="ghunit"></p>
+								<div class="col-sm-7">
+									<b class="text-left mr-auto w-100 float-left">Product Description:</b>
+									<p class="mb-0" id="gprdescrip"></p>
+								</div>
 							</div>
 							<a id="temidon" href="#" class="btn btn-danger w-100" onclick="fnPopToCart(this.id);" data-iditem>Add to Cart</a>
 						</div>
