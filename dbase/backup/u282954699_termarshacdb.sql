@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2022 at 03:35 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Nov 06, 2022 at 02:06 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,15 +66,20 @@ CREATE TABLE `conf` (
   `nav_bar_orrient` text NOT NULL,
   `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `button_size` text NOT NULL,
-  `content_width` text NOT NULL
+  `content_width` text NOT NULL,
+  `page_visit` int(11) NOT NULL,
+  `unit_name` text NOT NULL,
+  `hosted_by` text NOT NULL,
+  `unit_build_by` text NOT NULL,
+  `http_by` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `conf`
 --
 
-INSERT INTO `conf` (`id`, `cmpny_name`, `sys_name`, `sys_ver`, `sys_logo`, `navbar_logo`, `favicon`, `quote_title`, `ceo_pres`, `memail`, `facebook`, `telno`, `mobileno`, `maddress`, `idletime`, `themename`, `domainhome`, `fontglobal`, `datetoday`, `created`, `primary_color`, `second_color`, `third_color`, `forth_color`, `fifth_color`, `sixth_color`, `seventh_color`, `eight_color`, `ninght_color`, `tenth_color`, `menu_gradient_color`, `geo_map`, `build_by`, `cwebzite`, `dcurrencyx`, `nav_bar_orrient`, `modified`, `button_size`, `content_width`) VALUES
-(1, 'Termar\'s Hardware and Constraction', 'Termar\'s Hardware and Constraction', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Online hardware can help them improve the concerns of the customers.', 'Engr. Allan Poserio', 'termars_rubina@yahoo.com', 'facebook.com/termarshardware', '(062) 957-2826', '0917-115-5270', 'Purok Citrus, Poblacion Ipil, Zamboanga Sibugay, PH 07001', 20, 'termarshardwareandconstruction', '/termarshardwareandconstruction/', '', '20221016', '2021-11-03 21:09:34', '#f79646', 'rgba(247,150,70,0.1)', '#b56422', 'rgba(247,150,70,0.95)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'linear-gradient(rgb(238, 103, 45), rgb(248, 174, 51), rgb(238, 103, 45))', '7.7829683,122.5886357', 'Divina Tadeo Ochovillo, Beverly Pestaño Apatan, Rovilyn Fernandez Maico, Crisjen Remegio Dequin', 'termarshardwareandconstruction.com', '&#8369;', 'fixed-top', '2022-10-16 01:46:27', '', 'container');
+INSERT INTO `conf` (`id`, `cmpny_name`, `sys_name`, `sys_ver`, `sys_logo`, `navbar_logo`, `favicon`, `quote_title`, `ceo_pres`, `memail`, `facebook`, `telno`, `mobileno`, `maddress`, `idletime`, `themename`, `domainhome`, `fontglobal`, `datetoday`, `created`, `primary_color`, `second_color`, `third_color`, `forth_color`, `fifth_color`, `sixth_color`, `seventh_color`, `eight_color`, `ninght_color`, `tenth_color`, `menu_gradient_color`, `geo_map`, `build_by`, `cwebzite`, `dcurrencyx`, `nav_bar_orrient`, `modified`, `button_size`, `content_width`, `page_visit`, `unit_name`, `hosted_by`, `unit_build_by`, `http_by`) VALUES
+(4, 'Termar\'s Hardware and Constraction', 'Termar\'s Hardware and Constraction', '1.0.0', 'logo.png', 'logo-white.png', 'logo.png', 'Online hardware can help them improve the concerns of the customers.', 'Engr. Allan Poserio', 'termars_rubina@yahoo.com', 'facebook.com/termarshardware', '(062) 957-2826', '0917-115-5270', 'Purok Citrus, Poblacion Ipil, Zamboanga Sibugay, PH 07001', 20, 'termarshardwareandconstruction', '/termarshardwareandconstruction/', '', '20221031', '2021-11-03 21:09:34', '#f79646', 'rgba(247,150,70,0.1)', '#b56422', 'rgba(247,150,70,0.95)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'rgba(241,179,0,0.1)', 'linear-gradient(rgb(238, 103, 45), rgb(248, 174, 51), rgb(238, 103, 45))', '7.7829683,122.5886357', 'Divina Tadeo Ochovillo, Beverly Pestaño Apatan, Rovilyn Fernandez Maico, Crisjen Remegio Dequin', 'termarshardwareandconstruction.com', '&#8369;', 'fixed-top', '2022-11-06 13:05:51', '', 'container', 91, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -90,16 +95,6 @@ CREATE TABLE `tblcrud` (
   `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deletedx` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblcrud`
---
-
-INSERT INTO `tblcrud` (`id`, `fieldtxt`, `status`, `created`, `modified`, `deletedx`) VALUES
-(1, 'Waaa', 0, '2022-10-16 10:59:13', '2022-10-16 02:59:13', 0),
-(2, 'Weeee', 0, '2022-10-16 10:59:25', '2022-10-16 02:59:25', 0),
-(3, 'hahahah', 0, '2022-10-16 10:59:30', '2022-10-16 02:59:30', 0),
-(4, 'hahaha', 0, '2022-10-16 10:59:34', '2022-10-16 02:59:34', 0);
 
 -- --------------------------------------------------------
 
@@ -133,8 +128,6 @@ CREATE TABLE `tblitem` (
 --
 
 INSERT INTO `tblitem` (`item_id`, `barcode`, `name`, `description`, `category`, `unit`, `sell_price`, `sale_price`, `supplier_price`, `stock_available`, `size`, `color`, `quality`, `status`, `extnem`, `created`, `modified`, `deletedx`) VALUES
-(1, '', 'Dress', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Womens Apparel', 'pc', 280, 0, 0, 90, 'Medium', '', '', 0, 'jpg', '2022-04-05 09:48:38', '2022-10-16 10:56:11', 1),
-(2, '', 'Huda Liquid Matte', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Beauty Product', 'pc', 180, 0, 0, 20, 'Small', '', '', 0, 'jpg', '2022-04-05 10:35:00', '2022-10-16 10:56:12', 1),
 (3, '', 'ASJ03-26 Die Grinder', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Die Grinder', 'pc', 4800, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:39:58', '2022-10-16 10:56:12', 1),
 (4, '', 'ASM10-100 Angle Grinder', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Angle Grinder', 'pc', 6000, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 07:42:01', '2022-10-16 10:56:22', 1),
 (5, '', 'ASM10-100H Angle Grinder', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'DCA Power Tools', 'pc', 6200, 0, 0, 50, 'Medium', '', '', 0, 'jpg', '2022-04-25 07:43:57', '2022-10-16 10:56:24', 0),
@@ -157,8 +150,7 @@ INSERT INTO `tblitem` (`item_id`, `barcode`, `name`, `description`, `category`, 
 (22, '', 'Vespa 2 HP Direct Couple Air Compressor', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Hand Tools', 'pc', 4800, 0, 0, 50, 'Medium', '', '', 0, 'png', '2022-04-25 08:16:55', '2022-10-16 10:56:34', 0),
 (23, '', 'MAKITA B-65791 Aviation Snips Cuts Straight', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Hand Tools', 'pc', 1090, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:17:54', '2022-10-16 10:56:35', 0),
 (24, '', 'STANLEY “Contractor Grade” High Tension Hacksaw Frame', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Hand Tools', 'pc', 700, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:18:51', '2022-10-16 10:56:35', 0),
-(25, '', 'STANLEY 74-995 HD Hedge Shears 8”', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Hand Tools', 'pc', 700, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:20:01', '2022-10-16 10:56:36', 0),
-(26, '', 'IELST Reviewer', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Book', 'pc', 489, 0, 0, 185, '156 pages', '', '', 0, 'png', '2022-10-09 18:12:13', '2022-10-16 10:56:18', 0);
+(25, '', 'STANLEY 74-995 HD Hedge Shears 8”', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Hand Tools', 'pc', 700, 0, 0, 50, 'Small', '', '', 0, 'png', '2022-04-25 08:20:01', '2022-10-16 10:56:36', 0);
 
 -- --------------------------------------------------------
 
@@ -201,9 +193,9 @@ CREATE TABLE `tblsysuser` (
 --
 
 INSERT INTO `tblsysuser` (`usercode`, `username`, `passcode`, `pin`, `extname`, `img_url`, `fullname`, `uemail`, `umobileno`, `xposition`, `secquest`, `secans`, `ulevpos`, `uonline`, `ustatz`, `createdby`, `lname`, `fname`, `mname`, `address`, `deletedx`, `testimony`, `cmpny`, `cmpny_position`, `gogfirstime`, `created`, `modified`) VALUES
-('00000000000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '123456', '', 'https://lh3.googleusercontent.com/a/AATXAJySoJIRP_pIVIlqG7sRV53ZP97u1QcDOl1gIz_a=s96-c', 'Admin A. Minad', 'admin@info.com', '1', 'Administrator', 'What is your the name of your favorite dog?', 'you', 1, 0, 1, '00000000000', 'Admin', 'Admin', 'Admin', '', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'The Company', 'Position', 0, '2021-12-06 00:12:35', '2022-04-05 21:57:41'),
-('202204030001', 'cashier', '6ac2470ed8ccf204fd5ff89b32a355cf', '095324', '', '', 'Cashier C. Cashier', 'cashier@gmail.com', '12345678910', 'Cashier', 'What is the name of your favorite pet?', 'dog', 3, 0, 1, '', 'Cashier', 'Cashier', 'Cashier', 'Pob., Tungawan', 0, '', '', '', 0, '2022-04-04 00:00:51', '2022-04-03 16:04:13'),
-('202210160001', 'johndoe', 'b97c465929d45e01266a81dc0a55b912', '324658', '', '', 'John E. Doe', 'johndoe@gmail.com', '09204826025', 'Customer', '', '', 6, 0, 1, '', 'Doe', 'John', 'Ehem', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 0, '', '', '', 0, '2022-10-16 09:46:27', '2022-10-16 01:46:27');
+('00000000000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '123456', '', 'https://www.w3schools.com/bootstrap4/img_avatar1.png', 'Admin A. Minad', 'admin@info.com', '1', 'Administrator', 'What is your the name of your favorite dog?', 'you', 1, 0, 1, '00000000000', 'Admin', 'Admin', 'Admin', '', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'The Company', 'Position', 0, '2021-12-06 00:12:35', '2022-11-06 13:03:46'),
+('00000000001', 'guest', '084e0343a0486ff05530df6c705c8bb4', '421698', 'png', 'https://www.w3schools.com/bootstrap4/img_avatar3.png', 'Customer G. Guest', 'guest@gmail.com', '+639066669696', 'Customer', 'What is the name of your favorite pet?', 'gog', 6, 0, 1, '', 'Guest', 'Customer', 'Guest', 'Guest, Guest Address', 0, '', '', '', 0, '2022-10-31 12:46:27', '2022-11-06 13:04:04'),
+('202204030001', 'cashier', '6ac2470ed8ccf204fd5ff89b32a355cf', '095324', '', 'https://www.w3schools.com/bootstrap4/img_avatar5.png', 'Cashier C. Cashier', 'cashier@gmail.com', '12345678910', 'Cashier', 'What is the name of your favorite pet?', 'dog', 3, 0, 1, '', 'Cashier', 'Cashier', 'Cashier', 'Pob., Tungawan', 0, '', '', '', 0, '2022-04-04 00:00:51', '2022-11-06 13:03:50');
 
 -- --------------------------------------------------------
 
@@ -250,7 +242,7 @@ CREATE TABLE `tblsysuser_autoid` (
 --
 
 INSERT INTO `tblsysuser_autoid` (`id`, `fieldtxt`, `created`) VALUES
-(1, 'a', '2022-10-16 01:46:27');
+(1, 'a', '2022-10-31 04:46:27');
 
 -- --------------------------------------------------------
 
@@ -602,6 +594,40 @@ CREATE TABLE `tbl_headbanner_btn` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_menu_dboard`
+--
+
+CREATE TABLE `tbl_menu_dboard` (
+  `menu_id` int(11) NOT NULL,
+  `menu_title` text NOT NULL,
+  `menu_slug` text NOT NULL,
+  `menu_open` text NOT NULL,
+  `menable` int(1) NOT NULL,
+  `sort_num` int(2) NOT NULL,
+  `theme_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_menu_dboard`
+--
+
+INSERT INTO `tbl_menu_dboard` (`menu_id`, `menu_title`, `menu_slug`, `menu_open`, `menable`, `sort_num`, `theme_name`) VALUES
+(1, 'Analytics', '#', '_self', 0, 1, 'default'),
+(2, 'Dashboard', '#', '_self', 0, 2, 'default'),
+(3, 'Leads Report', '#', '_self', 0, 3, 'default'),
+(4, 'Click Stats', '#', '_self', 0, 4, 'default'),
+(5, 'Analytics', '#', '_self', 0, 1, 'whisp'),
+(6, 'Dashboard', '#', '_self', 0, 2, 'whisp'),
+(7, 'Leads Report', '#', '_self', 0, 3, 'whisp'),
+(8, 'Click Stats', '#', '_self', 0, 4, 'whisp'),
+(9, 'Analytics', '#', '_self', 1, 1, 'ePGovSys'),
+(10, 'Dashboard', '#', '_self', 1, 2, 'ePGovSys'),
+(11, 'Leads Report', '#', '_self', 1, 3, 'ePGovSys'),
+(12, 'Click Stats', '#', '_self', 1, 4, 'ePGovSys');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_menu_frontpage`
 --
 
@@ -661,22 +687,16 @@ CREATE TABLE `tbl_order_customer` (
   `referenceno` text DEFAULT NULL,
   `amountsent` double DEFAULT NULL,
   `modepay` text DEFAULT NULL,
+  `cashier_id` text NOT NULL,
+  `cashier_name` text NOT NULL,
+  `collector_id` text NOT NULL,
+  `collector_name` text NOT NULL,
+  `curcash` double NOT NULL,
+  `urchange` double NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
   `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_order_customer`
---
-
-INSERT INTO `tbl_order_customer` (`order_id`, `receipt_no`, `customer_id`, `customer_name`, `phone`, `cemail`, `address`, `sub_total_qty`, `sub_total_item`, `sub_total`, `shipping_fee`, `total_all`, `remarks`, `status`, `process_by`, `review_by`, `approved_by`, `receiver`, `receiver_phone`, `remail`, `d_location`, `long_lat`, `courier`, `otherinfo`, `datepaysent`, `referenceno`, `amountsent`, `modepay`, `created`, `modified`, `deleted`) VALUES
-(5, 'OR202210105', '104729588052179781063', 'Ludwig Bethnicer Napigkit', '+639154826025', 'alphaphpn@gmail.com', 'dfgfdsghsdfh, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 489, NULL, NULL, 'Complete', 'Paid', NULL, NULL, NULL, 'Ludwig Bethnicer Napigkit', '+639154826025', 'alphaphpn@gmail.com', 'dfgfdsghsdfh, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', NULL, NULL, NULL, NULL, '2022-10-10 07:21:04', '2022-10-16 15:58:17', 0),
-(6, 'OR202210116', '202210110008', 'John D. Doe', '1234567891', 'johndoe@gmail.com', 'Brgy. Sanito, Nuevo 2, Sanito, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 489, NULL, NULL, 'Complete', 'Paid', NULL, NULL, NULL, 'John D. Doe', '1234567891', 'johndoe@gmail.com', 'Brgy. Sanito, Nuevo 2, Sanito, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', NULL, NULL, NULL, NULL, '2022-10-11 10:01:57', '2022-10-16 15:57:44', 0),
-(7, 'OR202210167', '202210160001', 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 11, 3, 16, NULL, NULL, 'Complete', 'Paid', NULL, NULL, NULL, 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Waaaah, Nuevo 2, Sanito, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', '', '', '', NULL, NULL, NULL, NULL, '2022-10-16 09:46:39', '2022-10-16 15:57:41', 0),
-(8, 'OR202210168', '202210160001', 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 489, NULL, NULL, 'Complete', 'Paid', NULL, NULL, NULL, 'John E. Doe', ' 639154826025', 'alphaphpn@gmail.com', 'Xxx, Nuevo 2, Sanito, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-10-16 19:25:47', '2022-10-16 15:57:38', 0),
-(9, 'OR202210169', '202210160001', 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 700, NULL, NULL, 'Complete', 'Paid', NULL, NULL, NULL, 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-10-16 20:59:32', '2022-10-16 15:57:33', 0),
-(10, NULL, '202210160001', 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', 1, 1, 549, NULL, NULL, 'Checkout', 'Unpaid', NULL, NULL, NULL, 'John E. Doe', '09204826025', 'johndoe@gmail.com', 'Brgy. Sanito, Mahogany, Tirso Babiera, Ipil 7001, District-2, Zamboanga Sibugay, Region IX, Mindanao, Philippines, Asia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-10-17 00:22:20', '2022-10-16 16:47:09', 0);
 
 -- --------------------------------------------------------
 
@@ -701,20 +721,6 @@ CREATE TABLE `tbl_order_item` (
   `created` datetime NOT NULL DEFAULT current_timestamp(),
   `deleted` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_order_item`
---
-
-INSERT INTO `tbl_order_item` (`item_order_id`, `order_id`, `item_id`, `barcode`, `item_name`, `qty`, `unit`, `price`, `total_amt`, `extnem`, `cstock`, `status`, `modified`, `created`, `deleted`) VALUES
-(8, 5, 26, '', 'IELST Reviewer', 1, 'pc', 489, 489, 'png', 185, NULL, '2022-10-10 07:21:04', '2022-10-10 07:21:04', 0),
-(9, 6, 26, '', 'IELST Reviewer', 1, 'pc', 489, 489, 'png', 185, NULL, '2022-10-11 10:01:58', '2022-10-11 10:01:58', 0),
-(10, 7, 26, '', 'IELST Reviewer', 9, 'pc', 489, 4401, 'png', 185, NULL, '2022-10-16 09:50:39', '2022-10-16 09:46:39', 0),
-(11, 7, 23, '', 'MAKITA B-65791 Aviation Snips Cuts Straight', 1, 'pc', 1090, 1090, 'png', 50, NULL, '2022-10-16 09:50:19', '2022-10-16 09:50:19', 0),
-(12, 7, 21, '', 'Michelin MBL6 1.5HP Oil Free Air Compressor', 1, 'pc', 11000, 11000, 'png', 50, NULL, '2022-10-16 09:50:26', '2022-10-16 09:50:26', 0),
-(13, 8, 26, '', 'IELST Reviewer', 1, 'pc', 489, 489, 'png', 185, NULL, '2022-10-16 19:25:47', '2022-10-16 19:25:47', 0),
-(14, 9, 24, '', 'STANLEY “Contractor Grade” High Tension Hacksaw Frame', 1, 'pc', 700, 700, 'png', 50, NULL, '2022-10-16 20:59:32', '2022-10-16 20:59:32', 0),
-(15, 10, 19, '', 'Truper 17558 PICA-X Skeleton Reforced, Fiberglass Caulk Gun', 1, 'pc', 549, 549, 'png', 50, NULL, '2022-10-17 00:22:20', '2022-10-17 00:22:20', 0);
 
 -- --------------------------------------------------------
 
@@ -879,6 +885,12 @@ ALTER TABLE `tbl_headbanner_btn`
   ADD UNIQUE KEY `id` (`hbtn_id`);
 
 --
+-- Indexes for table `tbl_menu_dboard`
+--
+ALTER TABLE `tbl_menu_dboard`
+  ADD PRIMARY KEY (`menu_id`);
+
+--
 -- Indexes for table `tbl_menu_frontpage`
 --
 ALTER TABLE `tbl_menu_frontpage`
@@ -912,13 +924,13 @@ ALTER TABLE `tbl_secquest`
 -- AUTO_INCREMENT for table `conf`
 --
 ALTER TABLE `conf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tblcrud`
 --
 ALTER TABLE `tblcrud`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblitem`
@@ -1005,6 +1017,12 @@ ALTER TABLE `tbl_headbanner_btn`
   MODIFY `hbtn_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbl_menu_dboard`
+--
+ALTER TABLE `tbl_menu_dboard`
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `tbl_menu_frontpage`
 --
 ALTER TABLE `tbl_menu_frontpage`
@@ -1014,13 +1032,13 @@ ALTER TABLE `tbl_menu_frontpage`
 -- AUTO_INCREMENT for table `tbl_order_customer`
 --
 ALTER TABLE `tbl_order_customer`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_item`
 --
 ALTER TABLE `tbl_order_item`
-  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `item_order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_secquest`
