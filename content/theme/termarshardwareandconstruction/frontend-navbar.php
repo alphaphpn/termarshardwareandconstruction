@@ -125,6 +125,16 @@
 											$cartqtyz = '<span id="nmbtemi">'.$sbtotalqty2.'</span>';
 										}
 
+										if ($_SESSION["imglnkurl"]) {
+											if (preg_match("(^https?://)",$_SESSION["imglnkurl"])) {
+												$crntimgprfl = $_SESSION["imglnkurl"];
+											} else {
+												$crntimgprfl = $domainhome.$_SESSION["imglnkurl"];
+											}
+										} else {
+											$crntimgprfl = $domainhome."storage/img/no-image.jpg";
+										}
+
 										
 										echo '<li class="nav-item">
 											<a class="nav-link" href="'.$domainhome.'routes/mcart">
@@ -136,7 +146,7 @@
 										</li>';
 
 										echo '<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img class="acct-img" src="'.$domainhome.$_SESSION["imglnkurl"].'"><span class="indiunem ">'.trim($_SESSION["firstname"]).'</a>
+											<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><img class="acct-img" src="'.$crntimgprfl.'"><span class="indiunem ">'.trim($_SESSION["firstname"]).'</a>
 											<div class="dropdown-menu dropdown-menu-right">
 												<a class="dropdown-item" href="'.$domainhome.'routes/mprofile">Profile</a>';
 

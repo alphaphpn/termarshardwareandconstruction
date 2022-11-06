@@ -3,6 +3,7 @@
 	include_once "../../content/template-part/{$themename}/dashboard-navbar-top.php";
 
 	$usertypeget = isset($_GET['usertype']) ? $_GET['usertype'] : '';
+
 	if ($usertypeget) {
 		$labelusertype = $usertypeget;
 	} else {

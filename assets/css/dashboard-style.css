@@ -1,5 +1,9 @@
 /** Custom Style **/
 
+.bg-menprim-locor {
+	background-color: #e6772c;
+}
+
 #dbrd-navbar {
 	z-index: 1;
 }

@@ -1,4 +1,5 @@
 <?php
+	include_once "inc/pagevisit/index.php";
 	include_once "content/theme/".$themename."/frontend-navbar.php";
 	include_once "content/theme/".$themename."/slick-home-banner.php";
 	// include_once "content/theme/".$themename."/carousel-header.php";

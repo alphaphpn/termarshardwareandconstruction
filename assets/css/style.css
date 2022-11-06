@@ -49,6 +49,13 @@ body {
 }
 
 /** Default Style - Start **/
+.chr-limit10 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 10ch;
+}
+
 .w-30px {
 	width: 30px;
 }
@@ -73,6 +80,14 @@ body {
 	height: auto;
 	border-radius: 50%;
 	margin-right: 6px;
+}
+
+.acct-img-sqr {
+	width: 100%;
+	max-width: 48px;
+	height: auto;
+	border-radius: 12px;
+	margin-right: auto;
 }
 
 .indiunem {

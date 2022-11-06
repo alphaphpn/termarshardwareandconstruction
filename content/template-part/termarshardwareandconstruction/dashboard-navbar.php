@@ -66,6 +66,9 @@
 								if ($_SESSION["ulevpos"]==1) {
 									?>
 										<li>
+											<a href="<?php echo $baklnk; ?>routes/user/profile">My Profile</a>
+										</li>
+										<li>
 											<a href="<?php echo $baklnk; ?>routes/user">All User</a>
 										</li>
 										<li>
@@ -82,6 +85,12 @@
 										</li>
 										<li>
 											<a href="<?php echo $baklnk; ?>routes/user/addnew">Add New</a>
+										</li>
+									<?php
+								} else {
+									?>
+										<li>
+											<a href="<?php echo $baklnk; ?>routes/user/profile">My Profile</a>
 										</li>
 									<?php
 								}

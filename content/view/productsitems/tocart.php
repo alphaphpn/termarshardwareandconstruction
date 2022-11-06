@@ -219,14 +219,13 @@
 						cstock		= '$cstock6'
 						";
 					$cnn->exec($qry5);
-					// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 				} else {
-					// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+					echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 				}
 			} else {
-				// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
+				echo '<script>window.open("../../../routes/productsitems/","_self");</script>';
 			}
-			// echo '<script>window.open("../../../routes/productsitems/","_self");</script>';	
 		}
 	} catch (PDOException $exception) {
 		die('ERROR: ' . $exception->getMessage());

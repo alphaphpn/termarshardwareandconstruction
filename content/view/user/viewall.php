@@ -3,11 +3,18 @@
 	$tblname = "tblsysuser";
 	$prim_id = "usercode";
 	include_once "../../inc/cnndb.php";
+	$dethesdatenow = date("Y-m-d");
 	$usertype = isset($_GET['usertype']) ? $_GET['usertype'] : '';
+	$datetodaynewu = isset($_GET['dailynewuser']) ? $_GET['dailynewuser'] : '';
+
 	if ($usertype) {
 		$qry = "SELECT * FROM {$tblname} WHERE xposition=:usertypex AND deletedx=0 ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
 		$stmt = $cnn->prepare($qry);
 		$stmt->bindParam(":usertypex", $usertype);
+	} elseif ($datetodaynewu=='true') {
+		$qry = "SELECT * FROM {$tblname} WHERE deletedx=0 AND DATE(created)=:dethesdatenow ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
+		$stmt = $cnn->prepare($qry);
+		$stmt->bindParam(':dethesdatenow', $dethesdatenow);
 	} else {
 		$qry = "SELECT * FROM {$tblname} WHERE deletedx=0 ORDER BY {$prim_id} DESC LIMIT :from_record_num, :records_per_page";
 		$stmt = $cnn->prepare($qry);

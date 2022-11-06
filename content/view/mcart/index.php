@@ -160,20 +160,6 @@
 								<td><?php echo $dcurrencyx; ?><span id="allsubtotal" data-value="<?php echo $sbtotztal; ?>"><?php echo $sbtotztal; ?></span></td>
 								<td></td>
 							</tr>
-						<?php
-							
-							$ordr_crid = $order_id2;
-							$order_subttl = $sbtotztal;
-							$order_totalrows = $sbtotalrows;
-							$order_totalqty = $sbtotalqty;
-							$cnn_ins_sum = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
-							$qry_ins_sum = "UPDATE tbl_order_customer SET 
-								sub_total			= '$order_subttl', 
-								sub_total_qty		= '$order_totalqty', 
-								sub_total_item		= '$order_totalrows'
-								WHERE order_id		= '$ordr_crid' ";
-							$cnn_ins_sum->exec($qry_ins_sum);
-						?>
 						</tfoot>
 					</table>
 				</div>

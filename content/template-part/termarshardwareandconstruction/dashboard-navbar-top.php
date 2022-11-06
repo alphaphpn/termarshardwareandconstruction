@@ -61,7 +61,7 @@
 						</span>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
-						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li><a class="dropdown-item" href="<?php echo $baklnk; ?>routes/user/profile">Profile</a></li>
 						<li>
 							<a class="dropdown-item" href="#">&lArr; Settings</a>
 							<ul class="submenu dropdown-menu">

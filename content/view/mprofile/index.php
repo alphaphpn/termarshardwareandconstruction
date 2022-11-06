@@ -286,7 +286,7 @@
 		<div class="modal-content">
 			<button type="button" class="close text-right mr-1" data-dismiss="modal">&times;</button>
 			<div class="modal-body">
-				<img id="profvwimgfl3" src="<?php echo $pimglnkurl; ?>">
+				<img id="profvwimgfl3" src="<?php echo $profpicsurrer; ?>">
 			</div>
 		</div>
 	</div>
