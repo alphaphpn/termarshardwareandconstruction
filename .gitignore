@@ -1,16 +1,16 @@
-# storage/
-# inc/srvr.php
+storage/
+inc/srvr.php
 
-# content/theme/termarshardwareandconstruction/storage/img/item/
-# content/theme/termarshardwareandconstruction/storage/img/profile/
-# content/view/index/
+content/theme/termarshardwareandconstruction/storage/img/item/
+content/theme/termarshardwareandconstruction/storage/img/profile/
+content/view/index/
 
-# sendmail.ini
-# database.php
-# notes.txt
-# 401.html
-# 403.html
-# 404.html
-# .htaccess
-# *.sql
-# *.bak
+sendmail.ini
+database.php
+notes.txt
+401.html
+403.html
+404.html
+.htaccess
+*.sql
+*.bak
